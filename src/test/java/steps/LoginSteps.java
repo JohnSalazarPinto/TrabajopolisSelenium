@@ -41,7 +41,7 @@ public class LoginSteps {
      */
     @When("user put username and password")
     public void userPutUsernameAndPassword() {
-        loginPage.login();
+        loginPage.fillUserNamePassword();
     }
 
     /**

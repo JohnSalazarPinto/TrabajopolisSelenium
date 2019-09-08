@@ -25,7 +25,10 @@ import org.openqa.selenium.By;
 public class LoginPage extends AmazonUtils {
     AmazonConfig amazonConfig;
 
-    public void login() {
+    /**
+     * Fills user name and password.
+     */
+    public void fillUserNamePassword() {
         sendKey(By.id("ap_email"), amazonConfig.getInstance().getUsername());
         click(By.cssSelector(".a-button-inner > #continue"));
         sendKey(By.id("ap_password"), amazonConfig.getInstance().getPassword());

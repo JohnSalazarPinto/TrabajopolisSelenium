@@ -74,7 +74,7 @@ public class AmazonConfig {
     /**
      * Gets username
      *
-     * @return username - Credential for login
+     * @return username - Credential for login.
      */
     public String getUsername() {
         return username;
@@ -83,7 +83,7 @@ public class AmazonConfig {
     /**
      * Gets password.
      *
-     * @return password - Credential for login
+     * @return password - Credential for login.
      */
     public String getPassword() {
         return password;
