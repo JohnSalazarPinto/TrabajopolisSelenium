@@ -41,7 +41,7 @@ public class AmazonConfig {
     }
 
     /**
-     * Gets instance for init properties
+     * Gets instance for init properties.
      *
      * @return amazonConfig
      */
@@ -72,7 +72,7 @@ public class AmazonConfig {
     }
 
     /**
-     * Gets username
+     * Gets username.
      *
      * @return username - Credential for login.
      */
