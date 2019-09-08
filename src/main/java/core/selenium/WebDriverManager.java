@@ -26,6 +26,19 @@ public class WebDriverManager {
     private static WebDriver driver;
     private static WebDriverManager webDriverManager;
 
+    /**
+     * Constructor sets properties.
+     */
+    private WebDriverManager() {
+        ConnectionFactory connection = new ConnectionFactory();
+        driver = connection.selector(webDriverConfig.getInstance().getBrowser());
+    }
+
+    /**
+     * Gets instance for init properties.
+     *
+     * @return webDriverManager.
+     */
     public static WebDriverManager getInstance() {
         if (webDriverManager == null) {
             webDriverManager = new WebDriverManager();
@@ -33,11 +46,11 @@ public class WebDriverManager {
         return webDriverManager;
     }
 
-    private WebDriverManager() {
-        ConnectionFactory connection = new ConnectionFactory();
-        driver = connection.selector(webDriverConfig.getInstance().getBrowser());
-    }
-
+    /**
+     * Gets driver for common methods.
+     *
+     * @return driver
+     */
     public WebDriver getDriver() {
         return driver;
     }

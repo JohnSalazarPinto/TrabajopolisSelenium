@@ -33,10 +33,18 @@ public class WebDriverConfig {
 
     public static WebDriverConfig webDriverConfig;
 
+    /**
+     * Constructor sets properties.
+     */
     private WebDriverConfig() {
         properties = browser();
     }
 
+    /**
+     * Gets instance for init properties.
+     *
+     * @return webDriverConfig.
+     */
     public static WebDriverConfig getInstance() {
         if (webDriverConfig == null) {
             webDriverConfig = new WebDriverConfig();
@@ -44,6 +52,11 @@ public class WebDriverConfig {
         return webDriverConfig;
     }
 
+    /**
+     * Gets values from gradle properties for the tests.
+     *
+     * @return properties - Properties with all data of the web driver.
+     */
     public Properties browser() {
         try {
             input = new FileInputStream(System.getProperty("user.dir") + "/gradle.properties");
@@ -60,27 +73,47 @@ public class WebDriverConfig {
         return properties;
     }
 
-    public static void main(String[] args) {
-        WebDriverConfig webDriverConfig = new WebDriverConfig();
-        webDriverConfig.getInstance();
-    }
-
+    /**
+     * Gets browser name.
+     *
+     * @return browser
+     */
     public String getBrowser() {
         return browser;
     }
 
+    /**
+     * Gets implicit wait for chrome.
+     *
+     * @return waitImplicit
+     */
     public String getWaitImplicitChrome() {
         return waitImplicitChrome;
     }
 
+    /**
+     * Gets explicit wait for chrome.
+     *
+     * @return waitExplicit
+     */
     public String getWaitExplicitChrome() {
         return waitExplicitChrome;
     }
 
+    /**
+     * Gets explicit wait for firefox.
+     *
+     * @return waitExplicit
+     */
     public String getWaitImplicitFirefox() {
         return waitImplicitFirefox;
     }
 
+    /**
+     * Gets explicit wait for firefox.
+     *
+     * @return waitExplicit
+     */
     public String getWaitExplicitFirefox() {
         return waitExplicitFirefox;
     }

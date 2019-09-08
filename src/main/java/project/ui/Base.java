@@ -29,6 +29,9 @@ public class Base {
     WebDriverManager webDriverManager;
     private static String url = "https://www.calculadora.org/";
 
+    /**
+     * Constructor class init connection for set driver.
+     */
     public Base(){
         driverConnection();
     }
