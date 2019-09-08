@@ -23,13 +23,13 @@ import java.util.Properties;
  * @version 1.0
  */
 public class WebDriverConfig {
-    InputStream input;
-    Properties properties;
-    String browser;
-    String waitImplicitChrome;
-    String waitExplicitChrome;
-    String waitImplicitFirefox;
-    String waitExplicitFirefox;
+    private InputStream input;
+    private Properties properties;
+    private String browser;
+    private String waitImplicitChrome;
+    private String waitExplicitChrome;
+    private String waitImplicitFirefox;
+    private String waitExplicitFirefox;
 
     public static WebDriverConfig webDriverConfig;
 

@@ -27,8 +27,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class AmazonUtils {
     private WebDriver driver;
-    WebDriverManager webDriverManager;
-    private static String url = "https://www.calculadora.org/";
 
     /**
      * Constructor class init connection for set driver.
