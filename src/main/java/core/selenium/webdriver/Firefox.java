@@ -46,6 +46,4 @@ public class Firefox {
         driver.manage().window().maximize();
         return driver;
     }
-
-
 }
