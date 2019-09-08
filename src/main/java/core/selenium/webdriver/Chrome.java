@@ -9,6 +9,11 @@ public class Chrome implements IBrowser {
 
     private static WebDriver driver;
 
+    @Override
+    public void connection() {
+        driverConnection();
+    }
+
     /**
      * Method for connect with chrome.
      *

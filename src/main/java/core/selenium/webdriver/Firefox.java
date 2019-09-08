@@ -5,8 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class Firefox {
+public class Firefox implements IBrowser {
     private static WebDriver driver;
+
+    @Override
+    public void connection() {
+        driverConnection();
+    }
 
     /**
      * Method for connect with firefox.
@@ -22,4 +27,6 @@ public class Firefox {
         driver.manage().window().maximize();
         return driver;
     }
+
+
 }

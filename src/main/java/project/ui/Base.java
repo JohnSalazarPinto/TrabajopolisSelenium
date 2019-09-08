@@ -43,7 +43,6 @@ public class Base {
 //        base.driverConnection();
 //    }
 
-
     /**
      * This method makes click acction.
      *
@@ -51,6 +50,10 @@ public class Base {
      */
     public void click(By locator) {
         driver.findElement(locator).click();
+    }
+
+    public void sendKey(By locator,String key){
+        driver.findElement(locator).sendKeys(key);
     }
 
     /**
@@ -74,6 +77,16 @@ public class Base {
         return value;
     }
 
+    /**
+     * This method get the result for assert.
+     *
+     * @param locator - Locator type.
+     * @return value - Value for the assertion.
+     */
+    public String message(By locator) {
+        String value = driver.findElement(locator).getText();
+        return value;
+    }
 
     /*
      * This method close the browser after of the test.

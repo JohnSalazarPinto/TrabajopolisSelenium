@@ -13,8 +13,6 @@ public class ConnectionFactory {
             driver = Chrome.driverConnection();
         } else if (browser.contains("firefox")) {
             driver = Firefox.driverConnection();
-        } else if (browser.contains("edge")) {
-            driver = Edge.driverConnection();
         }
         return driver;
     }

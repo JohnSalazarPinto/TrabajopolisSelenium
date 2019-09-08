@@ -4,9 +4,5 @@ import org.openqa.selenium.WebDriver;
 
 public interface IBrowser {
 
-    WebDriver driver = null;
-
-    public static WebDriver DriverConnection() {
-        return driver;
-    }
+    public void connection();
 }
