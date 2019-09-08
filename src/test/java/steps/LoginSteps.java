@@ -26,6 +26,7 @@ import project.ui.pages.LoginPage;
  * @version 1.0
  */
 public class LoginSteps {
+
     LoginPage loginPage = new LoginPage();
 
     /**
@@ -49,6 +50,6 @@ public class LoginSteps {
      */
     @Then("user login succefuly")
     public void userLoginSuccefuly() {
-        Assert.assertEquals(loginPage.message(),"Authentication required");
+        Assert.assertEquals(loginPage.message(), "Authentication required");
     }
 }

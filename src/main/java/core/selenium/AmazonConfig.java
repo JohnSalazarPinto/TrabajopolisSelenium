@@ -24,11 +24,11 @@ import java.util.Properties;
  */
 public class AmazonConfig {
 
-    InputStream input;
-    Properties properties;
-    String username;
-    String password;
-    String url;
+    private InputStream input;
+    private Properties properties;
+    private String username;
+    private String password;
+    private String url;
 
 
     public static AmazonConfig amazonConfig;

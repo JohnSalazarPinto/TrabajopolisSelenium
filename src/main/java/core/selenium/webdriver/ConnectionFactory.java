@@ -22,6 +22,7 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public class ConnectionFactory {
+
     public WebDriverConfig webDriverConfig;
     private WebDriver driver;
 

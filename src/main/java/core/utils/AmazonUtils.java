@@ -26,6 +26,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  */
 public class AmazonUtils {
+    
     private WebDriver driver;
 
     /**

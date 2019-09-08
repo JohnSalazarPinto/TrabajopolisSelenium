@@ -24,6 +24,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @version 1.0
  */
 public class Firefox {
+
     private static WebDriver driver;
 
     /**

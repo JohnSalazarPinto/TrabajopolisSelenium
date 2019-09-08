@@ -23,6 +23,7 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public class BasePage {
+
     public WebDriver driver;
 
     /**
