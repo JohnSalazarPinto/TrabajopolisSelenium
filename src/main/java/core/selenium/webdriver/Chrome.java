@@ -23,7 +23,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class Chrome implements IBrowser {
+public class Chrome {
 
     private static WebDriver driver;
 
