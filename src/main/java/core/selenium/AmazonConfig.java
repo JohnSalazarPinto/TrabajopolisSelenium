@@ -28,8 +28,6 @@ public class AmazonConfig {
     private String username;
     private String password;
     private String url;
-
-
     public static AmazonConfig amazonConfig;
 
     /**
