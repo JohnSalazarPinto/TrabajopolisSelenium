@@ -13,6 +13,9 @@
 
 package project.ui;
 
+import core.selenium.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+
 /**
  * BasePage class.
  *
@@ -20,4 +23,15 @@ package project.ui;
  * @version 1.0
  */
 public class BasePage {
+    public WebDriver driver;
+
+    /**
+     * Method for connect with chrome.
+     *
+     * @return driver
+     */
+    public WebDriver driverConnection() {
+        driver = WebDriverManager.getInstance().getDriver();
+        return driver;
+    }
 }

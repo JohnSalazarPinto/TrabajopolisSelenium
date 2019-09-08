@@ -92,7 +92,7 @@ public class AmazonConfig {
     /**
      * Gets url.
      *
-     * @return url - Base url.
+     * @return url - AmazonUtils url.
      */
     public String getUrl() {
         return url;

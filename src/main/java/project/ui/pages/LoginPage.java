@@ -13,8 +13,8 @@
 package project.ui.pages;
 
 import core.selenium.AmazonConfig;
+import core.utils.AmazonUtils;
 import org.openqa.selenium.By;
-import project.ui.Base;
 
 /**
  * LoginPage class.
@@ -22,7 +22,7 @@ import project.ui.Base;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class LoginPage extends Base {
+public class LoginPage extends AmazonUtils {
     AmazonConfig amazonConfig;
 
     public void login() {
