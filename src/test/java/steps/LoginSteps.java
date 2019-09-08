@@ -47,7 +47,7 @@ public class LoginSteps {
     /**
      * Get a message of new Autentication.
      */
-    @Then("user login succefuly")
+    @Then("user login successfully")
     public void userLoginSuccefuly() {
         Assert.assertEquals(loginPage.message(), "Authentication required");
     }
