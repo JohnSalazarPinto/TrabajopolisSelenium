@@ -29,6 +29,9 @@ public class Base {
     WebDriverManager webDriverManager;
     private static String url = "https://www.calculadora.org/";
 
+    public Base(){
+        driverConnection();
+    }
     /**
      * Method for connect with chrome.
      *
@@ -37,11 +40,6 @@ public class Base {
     public void driverConnection() {
         driver = WebDriverManager.getInstance().getDriver();
     }
-
-//    public static void main(String[] args) {
-//        Base base = new Base();
-//        base.driverConnection();
-//    }
 
     /**
      * This method makes click acction.

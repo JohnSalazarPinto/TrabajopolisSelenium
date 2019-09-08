@@ -24,7 +24,7 @@ public class Chrome implements IBrowser {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--incognito");
         driver = new ChromeDriver(chromeOptions);
-        driver.get("https://www.calculadora.org/");
+        driver.get("https://www.amazon.com//");
         driver.manage().window().maximize();
         return driver;
     }

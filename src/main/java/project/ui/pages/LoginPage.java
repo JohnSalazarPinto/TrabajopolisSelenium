@@ -12,6 +12,7 @@
 
 package project.ui.pages;
 
+import core.selenium.AmazonConfig;
 import org.openqa.selenium.By;
 import project.ui.Base;
 
@@ -22,19 +23,12 @@ import project.ui.Base;
  * @version 1.0
  */
 public class LoginPage extends Base {
+    AmazonConfig amazonConfig;
 
     public void login() {
-        //    driver.get("https://www.amazon.com//");
-        driverConnection();
-        //    driver.findElement(By.cssSelector("#nav-link-accountList > .nav-line-2")).click();
-        click(By.cssSelector("#nav-link-accountList > .nav-line-2"));
-        // driver.findElement(By.id("ap_email")).sendKeys("johnpiterzon@gmail.com");
-        sendKey(By.id("ap_email"), "johnpiterzon@gmail.com");
-        //   driver.findElement(By.cssSelector(".a-button-inner > #continue")).click();
+        sendKey(By.id("ap_email"), amazonConfig.getInstance().getUsername());
         click(By.cssSelector(".a-button-inner > #continue"));
-        //    driver.findElement(By.id("ap_password")).sendKeys("Holamundo@1");
-        sendKey(By.id("ap_password"), "Holamundo@1");
-        //    driver.findElement(By.id("signInSubmit")).click();
+        sendKey(By.id("ap_password"), amazonConfig.getInstance().getPassword());
         click(By.id("signInSubmit"));
     }
 

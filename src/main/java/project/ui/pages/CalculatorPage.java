@@ -29,7 +29,7 @@ public class CalculatorPage extends Base {
      * @param operation - Math operation.
      */
     public void operationLinkTetxt(String operation) {
-        driverConnection();
+ //       driverConnection();
 //        visit(url);
 
         String[] vectorOperation = operation.split("");
@@ -46,7 +46,7 @@ public class CalculatorPage extends Base {
      * @param operation - Math operation.
      */
     public void operationXpathAttributes(String operation) {
-        driverConnection();
+ //       driverConnection();
 //        visit(url);
         String[] vectorOperation = operation.split("");
         for (int i = 0; i < operation.length(); i++) {
@@ -66,7 +66,7 @@ public class CalculatorPage extends Base {
      * @param operation - Math operation.
      */
     public void operationInnerText(String operation) {
-        driverConnection();
+ //       driverConnection();
 //        visit(url);
 
         String[] vectorOperation = operation.split("");
@@ -82,7 +82,7 @@ public class CalculatorPage extends Base {
      * @param operation - Math operation.
      */
     public void operationXpathLink(String operation) {
-        driverConnection();
+ //       driverConnection();
 //         visit(url);
         String[] vectorOperation = operation.split("");
         for (int i = 0; i < operation.length(); i++) {
@@ -97,7 +97,7 @@ public class CalculatorPage extends Base {
      * @param operation - Math operation.
      */
     public void operationXpathPosition(String operation) {
-        driverConnection();
+  //      driverConnection();
 //        visit(url);
         String[] vectorOperation = operation.split("");
         for (int i = 0; i < operation.length(); i++) {
