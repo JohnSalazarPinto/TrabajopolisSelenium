@@ -24,7 +24,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @version 1.0
  */
 public class Firefox {
-
     private static WebDriver driver;
 
     /**
@@ -44,7 +43,6 @@ public class Firefox {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.addArguments("--incognito");
         driver = new FirefoxDriver(firefoxOptions);
-        driver.get("https://www.calculadora.org/");
         driver.manage().window().maximize();
         return driver;
     }

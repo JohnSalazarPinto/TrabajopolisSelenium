@@ -23,8 +23,7 @@ import org.openqa.selenium.By;
  * @version 1.0
  */
 public class LoginPage extends AmazonUtils {
-
-    AmazonConfig amazonConfig;
+    private AmazonConfig amazonConfig;
 
     /**
      * Fills user name and password.

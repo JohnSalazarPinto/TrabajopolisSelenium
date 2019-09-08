@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  */
 public class AmazonUtils {
-    
     private WebDriver driver;
 
     /**
@@ -38,12 +37,11 @@ public class AmazonUtils {
 
     /**
      * Method for connect with chrome.
-     *
-     * @return driver
      */
     public void driverConnection() {
         BasePage basePage = new BasePage();
         driver = basePage.driverConnection();
+        driver.get("https://www.amazon.com//");
     }
 
     /**

@@ -23,7 +23,6 @@ import java.util.Properties;
  * @version 1.0
  */
 public class AmazonConfig {
-
     private InputStream input;
     private Properties properties;
     private String username;

@@ -24,7 +24,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
  * @version 1.0
  */
 public class Chrome {
-
     private static WebDriver driver;
 
     /**
@@ -44,7 +43,6 @@ public class Chrome {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--incognito");
         driver = new ChromeDriver(chromeOptions);
-        driver.get("https://www.amazon.com//");
         driver.manage().window().maximize();
         return driver;
     }

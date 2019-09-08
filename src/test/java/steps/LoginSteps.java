@@ -26,8 +26,7 @@ import project.ui.pages.LoginPage;
  * @version 1.0
  */
 public class LoginSteps {
-
-    LoginPage loginPage = new LoginPage();
+    private LoginPage loginPage = new LoginPage();
 
     /**
      * This stps do click on register seccion.
