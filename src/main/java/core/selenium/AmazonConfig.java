@@ -22,13 +22,13 @@ import java.util.Properties;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class AmazonConfig {
+public final class AmazonConfig {
     private InputStream input;
     private Properties properties;
     private String username;
     private String password;
     private String url;
-    public static AmazonConfig amazonConfig;
+    private static AmazonConfig amazonConfig;
 
     /**
      * Constructor sets properties.

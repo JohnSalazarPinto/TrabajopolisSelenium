@@ -17,6 +17,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import project.ui.pages.LoginPage;
 
 /**
@@ -32,7 +33,7 @@ public class LoginSteps {
     /**
      * This stps do click on register seccion.
      */
-    @Given("user go to login page")
+    @Given("the user goes to login page")
     public void userGoToLoginPage() {
         loginPage.visit(amazonConfig.getInstance().getUrl());
     }
@@ -50,7 +51,8 @@ public class LoginSteps {
      */
     @Then("user login successfully")
     public void userLoginSuccefuly() {
-        Assert.assertEquals(loginPage.message(), "Authentication required");
-        //    loginPage.close();
+        loginPage.click(By.linkText("Mi Perfil"));
+        Assert.assertEquals(loginPage.message(), "johnpiterzon@gmail.com");
+        loginPage.close();
     }
 }

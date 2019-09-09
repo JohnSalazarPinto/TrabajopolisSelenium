@@ -30,7 +30,7 @@ public class WebDriverConfig {
     private String waitExplicitChrome;
     private String waitImplicitFirefox;
     private String waitExplicitFirefox;
-    public static WebDriverConfig webDriverConfig;
+    private static WebDriverConfig webDriverConfig;
 
     /**
      * Constructor sets properties.
