@@ -8,4 +8,4 @@ Feature: Basic and Advance search
   Scenario: Advance search by city
     Given the user goes principal page
     When user search by a specific city
-    Then the result conteins the city in the location field
+    Then the result contains the city in the location field

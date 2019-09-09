@@ -29,7 +29,7 @@ public class ConnectionFactory {
      * This method chosse the browser type accord of the properties.
      *
      * @param browser - Type of Browser for the test.
-     * @return driver
+     * @return driver - New browser driver.
      */
     public WebDriver selector(String browser) {
         webDriverConfig.getInstance().getBrowser();
