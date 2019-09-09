@@ -51,8 +51,24 @@ public class LoginSteps {
      */
     @Then("user login successfully")
     public void userLoginSuccefuly() {
-        loginPage.click(By.linkText("Mi Perfil"));
+        loginPage.visit("https://www.trabajopolis.bo/log-in/");
+        Assert.assertEquals(loginPage.message(By.className("indexDiv")),
+                "Usted Está Conectado Como johnpiterzon@gmail.com");
+    }
+
+    /**
+     * Goes to account page.
+     */
+    @Given("the user goes to account page")
+    public void theUserGoesToAcoountPage() {
+        loginPage.visit(amazonConfig.getInstance().getUrlAccount());
+    }
+
+    /**
+     * Get a message of new Authentication.
+     */
+    @Then("user confirm his correct data successfully")
+    public void userConfirmHisCorrectDataSuccessfully() {
         Assert.assertEquals(loginPage.message(), "johnpiterzon@gmail.com");
-        loginPage.close();
     }
 }
