@@ -12,7 +12,7 @@
 
 package steps;
 
-import core.selenium.AmazonConfig;
+import core.selenium.TrabajopolisConfig;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,7 +28,7 @@ import project.ui.pages.LoginPage;
  */
 public class LoginSteps {
     private LoginPage loginPage = new LoginPage();
-    private AmazonConfig amazonConfig;
+    private TrabajopolisConfig amazonConfig;
 
     /**
      * This stps do click on register seccion.
@@ -41,7 +41,7 @@ public class LoginSteps {
     /**
      * Fills all data for user login.
      */
-    @When("user put username and password")
+    @When("the user puts his username and password")
     public void userPutUsernameAndPassword() {
         loginPage.fillUserNamePassword();
     }

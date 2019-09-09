@@ -1,5 +1,5 @@
 /*
- * @(#) AmazonConfig.java Copyright (c) 2019 Jala Foundation.
+ * @(#) TrabajopolisConfig.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -17,23 +17,23 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * AmazonConfig class.
+ * TrabajopolisConfig class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public final class AmazonConfig {
+public final class TrabajopolisConfig {
     private InputStream input;
     private Properties properties;
     private String username;
     private String password;
     private String url;
-    private static AmazonConfig amazonConfig;
+    private static TrabajopolisConfig amazonConfig;
 
     /**
      * Constructor sets properties.
      */
-    private AmazonConfig() {
+    private TrabajopolisConfig() {
         properties = config();
     }
 
@@ -42,9 +42,9 @@ public final class AmazonConfig {
      *
      * @return amazonConfig
      */
-    public static AmazonConfig getInstance() {
+    public static TrabajopolisConfig getInstance() {
         if (amazonConfig == null) {
-            amazonConfig = new AmazonConfig();
+            amazonConfig = new TrabajopolisConfig();
         }
         return amazonConfig;
     }
@@ -89,7 +89,7 @@ public final class AmazonConfig {
     /**
      * Gets url.
      *
-     * @return url - AmazonUtils url.
+     * @return url - TrabajopolisUtils url.
      */
     public String getUrl() {
         return url;

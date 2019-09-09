@@ -21,8 +21,8 @@ import org.openqa.selenium.WebDriver;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class WebDriverManager {
-    public WebDriverConfig webDriverConfig;
+public final class WebDriverManager {
+    private WebDriverConfig webDriverConfig;
     private static WebDriver driver;
     private static WebDriverManager webDriverManager;
 

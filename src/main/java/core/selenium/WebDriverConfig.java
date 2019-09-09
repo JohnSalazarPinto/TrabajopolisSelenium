@@ -22,7 +22,7 @@ import java.util.Properties;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class WebDriverConfig {
+public final class WebDriverConfig {
     private InputStream input;
     private Properties properties;
     private String browser;
