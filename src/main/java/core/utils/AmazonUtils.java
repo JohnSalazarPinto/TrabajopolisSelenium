@@ -12,7 +12,7 @@
 
 package core.utils;
 
-import core.selenium.WebDriverManager;
+import core.selenium.AmazonConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import project.ui.BasePage;
@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class AmazonUtils {
     private WebDriver driver;
+    private AmazonConfig amazonConfig;
 
     /**
      * Constructor class init connection for set driver.
@@ -41,13 +42,13 @@ public class AmazonUtils {
     public void driverConnection() {
         BasePage basePage = new BasePage();
         driver = basePage.driverConnection();
-        driver.get("https://www.amazon.com//");
+        driver.get(amazonConfig.getInstance().getUrl());
     }
 
     /**
-     * This method makes click acction.
+     * This method makes click action.
      *
-     * @param locator - Locator type for do the acction.
+     * @param locator - Locator type for do the action.
      */
     public void click(By locator) {
         driver.findElement(locator).click();

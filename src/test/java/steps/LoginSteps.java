@@ -12,6 +12,7 @@
 
 package steps;
 
+import core.selenium.AmazonConfig;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -27,13 +28,14 @@ import project.ui.pages.LoginPage;
  */
 public class LoginSteps {
     private LoginPage loginPage = new LoginPage();
+    private AmazonConfig amazonConfig;
 
     /**
      * This stps do click on register seccion.
      */
     @Given("user go to login page")
     public void userGoToLoginPage() {
-        loginPage.click(By.cssSelector("#nav-link-accountList > .nav-line-2"));
+        loginPage.visit(amazonConfig.getInstance().getUrl());
     }
 
     /**
@@ -45,10 +47,11 @@ public class LoginSteps {
     }
 
     /**
-     * Get a message of new Autentication.
+     * Get a message of new Authentication.
      */
     @Then("user login successfully")
     public void userLoginSuccefuly() {
         Assert.assertEquals(loginPage.message(), "Authentication required");
+        //    loginPage.close();
     }
 }
