@@ -29,6 +29,7 @@ public final class TrabajopolisConfig {
     private String password;
     private String urlLogin;
     private String urlProfile;
+    private String urlBase;
     private static TrabajopolisConfig amazonConfig;
 
     /**
@@ -64,6 +65,7 @@ public final class TrabajopolisConfig {
             password = properties.getProperty("password");
             urlLogin = properties.getProperty("urlLogin");
             urlProfile = properties.getProperty("urlProfile");
+            urlBase = properties.getProperty("urlBase");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,7 +93,7 @@ public final class TrabajopolisConfig {
     /**
      * Gets urlLogin.
      *
-     * @return urlLogin - TrabajopolisUtils urlLogin.
+     * @return urlLogin - Page transport.
      */
     public String getUrlLogin() {
         return urlLogin;
@@ -100,9 +102,18 @@ public final class TrabajopolisConfig {
     /**
      * Gets urlProfile.
      *
-     * @return urlProfile - TrabajopolisUtils urlLogin.
+     * @return urlProfile - Page transport.
      */
     public String getUrlProfile() {
         return urlProfile;
+    }
+
+    /**
+     * Gets urlBase.
+     *
+     * @return urlBase - Page transport.
+     */
+    public String getUrlBase() {
+        return urlBase;
     }
 }
