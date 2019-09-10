@@ -31,7 +31,7 @@ public class ConnectionFactory {
      * @param browser - Type of Browser for the test.
      * @return driver - New browser driver.
      */
-    public WebDriver selector(String browser) {
+    public WebDriver selector(final String browser) {
         webDriverConfig.getInstance().getBrowser();
         if (browser.contains("chrome")) {
             driver = Chrome.driverConnection();
