@@ -1,5 +1,5 @@
 /*
- * @(#) AmazonUtils.java Copyright (c) 2019 Jala Foundation.
+ * @(#) TrabajopolisUtils.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -12,7 +12,7 @@
 
 package core.utils;
 
-import core.selenium.WebDriverManager;
+import core.selenium.TrabajopolisConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import project.ui.BasePage;
@@ -20,18 +20,19 @@ import project.ui.BasePage;
 import java.util.concurrent.TimeUnit;
 
 /**
- * AmazonUtils class.
+ * TrabajopolisUtils class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class AmazonUtils {
+public class TrabajopolisUtils {
     private WebDriver driver;
+    private TrabajopolisConfig amazonConfig;
 
     /**
      * Constructor class init connection for set driver.
      */
-    public AmazonUtils() {
+    public TrabajopolisUtils() {
         driverConnection();
     }
 
@@ -41,19 +42,25 @@ public class AmazonUtils {
     public void driverConnection() {
         BasePage basePage = new BasePage();
         driver = basePage.driverConnection();
-        driver.get("https://www.amazon.com//");
+        driver.get(amazonConfig.getInstance().getUrl());
     }
 
     /**
-     * This method makes click acction.
+     * This method makes click action.
      *
-     * @param locator - Locator type for do the acction.
+     * @param locator - Locator type for do the action.
      */
-    public void click(By locator) {
+    public void click(final By locator) {
         driver.findElement(locator).click();
     }
 
-    public void sendKey(By locator, String key) {
+    /**
+     * This method works for fill data.
+     *
+     * @param locator - where we will fill the data.
+     * @param key     - Data that will be fill.
+     */
+    public void sendKey(final By locator, final String key) {
         driver.findElement(locator).sendKeys(key);
     }
 
@@ -62,7 +69,7 @@ public class AmazonUtils {
      *
      * @param url - The page for test.
      */
-    public void visit(String url) {
+    public void visit(final String url) {
         driver.get(url);
         driver.manage().window().maximize();
     }
@@ -73,7 +80,7 @@ public class AmazonUtils {
      * @param locator - Locator type.
      * @return value - Value for the assertion.
      */
-    public String value(By locator) {
+    public String value(final By locator) {
         String value = driver.findElement(locator).getAttribute("value");
         return value;
     }
@@ -84,20 +91,16 @@ public class AmazonUtils {
      * @param locator - Locator type.
      * @return value - Value for the assertion.
      */
-    public String message(By locator) {
+    public String message(final By locator) {
         String value = driver.findElement(locator).getText();
         return value;
     }
 
-    /*
+    /**
      * This method close the browser after of the test.
      */
     public void close() {
         driver.close();
-    }
-
-    public void clean() {
-        driver.findElement(By.linkText("C")).click();
     }
 
     /**
@@ -105,7 +108,7 @@ public class AmazonUtils {
      *
      * @param wait - Number in seconds.
      */
-    public void implicitWait(int wait) {
+    public void implicitWait(final int wait) {
         driver.manage().timeouts().implicitlyWait(wait, TimeUnit.SECONDS);
     }
 }

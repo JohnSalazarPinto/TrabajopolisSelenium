@@ -22,16 +22,16 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public class ConnectionFactory {
-    public WebDriverConfig webDriverConfig;
+    private WebDriverConfig webDriverConfig;
     private WebDriver driver;
 
     /**
      * This method chosse the browser type accord of the properties.
      *
      * @param browser - Type of Browser for the test.
-     * @return
+     * @return driver - New browser driver.
      */
-    public WebDriver selector(String browser) {
+    public WebDriver selector(final String browser) {
         webDriverConfig.getInstance().getBrowser();
         if (browser.contains("chrome")) {
             driver = Chrome.driverConnection();

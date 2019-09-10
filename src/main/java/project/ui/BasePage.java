@@ -23,7 +23,7 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public class BasePage {
-    public WebDriver driver;
+    private WebDriver driver;
 
     /**
      * Method for connect with chrome.

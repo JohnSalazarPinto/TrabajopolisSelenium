@@ -1,5 +1,5 @@
 /*
- * @(#) AmazonConfig.java Copyright (c) 2019 Jala Foundation.
+ * @(#) TrabajopolisConfig.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -17,23 +17,24 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * AmazonConfig class.
+ * TrabajopolisConfig class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class AmazonConfig {
+public final class TrabajopolisConfig {
     private InputStream input;
     private Properties properties;
     private String username;
     private String password;
     private String url;
-    public static AmazonConfig amazonConfig;
+    private String urlAccount;
+    private static TrabajopolisConfig amazonConfig;
 
     /**
      * Constructor sets properties.
      */
-    private AmazonConfig() {
+    private TrabajopolisConfig() {
         properties = config();
     }
 
@@ -42,9 +43,9 @@ public class AmazonConfig {
      *
      * @return amazonConfig
      */
-    public static AmazonConfig getInstance() {
+    public static TrabajopolisConfig getInstance() {
         if (amazonConfig == null) {
-            amazonConfig = new AmazonConfig();
+            amazonConfig = new TrabajopolisConfig();
         }
         return amazonConfig;
     }
@@ -56,12 +57,13 @@ public class AmazonConfig {
      */
     public Properties config() {
         try {
-            input = new FileInputStream(System.getProperty("user.dir") + "/amazon.properties");
+            input = new FileInputStream(System.getProperty("user.dir") + "/trabajopolis.properties");
             properties = new Properties();
             properties.load(input);
             username = properties.getProperty("username");
             password = properties.getProperty("password");
             url = properties.getProperty("url");
+            urlAccount = properties.getProperty("urlAccount");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -89,9 +91,18 @@ public class AmazonConfig {
     /**
      * Gets url.
      *
-     * @return url - AmazonUtils url.
+     * @return url - TrabajopolisUtils url.
      */
     public String getUrl() {
         return url;
+    }
+
+    /**
+     * Gets urlAccount.
+     *
+     * @return urlAccount - TrabajopolisUtils url.
+     */
+    public String getUrlAccount() {
+        return urlAccount;
     }
 }

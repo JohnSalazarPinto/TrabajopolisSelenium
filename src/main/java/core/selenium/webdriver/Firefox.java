@@ -27,7 +27,7 @@ public class Firefox {
     private static WebDriver driver;
 
     /**
-     * Constructor class init the conecction.
+     * Constructor class init the connection.
      */
     public void connection() {
         driverConnection();

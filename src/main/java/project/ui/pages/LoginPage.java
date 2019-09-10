@@ -12,8 +12,8 @@
 
 package project.ui.pages;
 
-import core.selenium.AmazonConfig;
-import core.utils.AmazonUtils;
+import core.selenium.TrabajopolisConfig;
+import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.By;
 
 /**
@@ -22,23 +22,25 @@ import org.openqa.selenium.By;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class LoginPage extends AmazonUtils {
-    private AmazonConfig amazonConfig;
+public class LoginPage extends TrabajopolisUtils {
+    private TrabajopolisConfig amazonConfig;
 
     /**
      * Fills user name and password.
      */
     public void fillUserNamePassword() {
-        sendKey(By.id("ap_email"), amazonConfig.getInstance().getUsername());
-        click(By.cssSelector(".a-button-inner > #continue"));
-        sendKey(By.id("ap_password"), amazonConfig.getInstance().getPassword());
-        click(By.id("signInSubmit"));
+        sendKey(By.name("username"), amazonConfig.getInstance().getUsername());
+      //  click(By.cssSelector(".a-button-inner > #continue"));
+        sendKey(By.name("password"), amazonConfig.getInstance().getPassword());
+        click(By.cssSelector("fieldset:nth-child(5)"));
+        click(By.cssSelector(".button"));
     }
 
     /**
      * Get the result of the math operation.
+     * @return message - Message that contains a locator.
      */
     public String message() {
-        return message(By.className("a-row"));
+        return message(By.cssSelector("fieldset:nth-child(3) > .inputField"));
     }
 }
