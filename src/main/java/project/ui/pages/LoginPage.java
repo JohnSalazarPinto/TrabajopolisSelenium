@@ -30,7 +30,6 @@ public class LoginPage extends TrabajopolisUtils {
      */
     public void fillUserNamePassword() {
         sendKey(By.name("username"), amazonConfig.getInstance().getUsername());
-      //  click(By.cssSelector(".a-button-inner > #continue"));
         sendKey(By.name("password"), amazonConfig.getInstance().getPassword());
         click(By.cssSelector("fieldset:nth-child(5)"));
         click(By.cssSelector(".button"));

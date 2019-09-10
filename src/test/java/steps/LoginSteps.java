@@ -19,6 +19,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import project.ui.pages.LoginPage;
+import project.ui.pages.PageTransport;
 
 /**
  * LoginSteps class.
@@ -29,13 +30,14 @@ import project.ui.pages.LoginPage;
 public class LoginSteps {
     private LoginPage loginPage = new LoginPage();
     private TrabajopolisConfig amazonConfig;
+    private PageTransport pageTransport = new PageTransport();
 
     /**
      * This stps do click on register seccion.
      */
     @Given("the user goes to login page")
     public void userGoToLoginPage() {
-        loginPage.visit(amazonConfig.getInstance().getUrl());
+        pageTransport.visitLogin();
     }
 
     /**
@@ -51,7 +53,7 @@ public class LoginSteps {
      */
     @Then("user login successfully")
     public void userLoginSuccefuly() {
-        loginPage.visit("https://www.trabajopolis.bo/log-in/");
+        pageTransport.visitLogin();
         Assert.assertEquals(loginPage.message(By.className("indexDiv")),
                 "Usted Está Conectado Como johnpiterzon@gmail.com");
     }
@@ -61,7 +63,7 @@ public class LoginSteps {
      */
     @Given("the user goes to account page")
     public void theUserGoesToAcoountPage() {
-        loginPage.visit(amazonConfig.getInstance().getUrlAccount());
+        pageTransport.visitProfile();
     }
 
     /**

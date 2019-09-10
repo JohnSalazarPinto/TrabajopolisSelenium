@@ -42,7 +42,6 @@ public class TrabajopolisUtils {
     public void driverConnection() {
         BasePage basePage = new BasePage();
         driver = basePage.driverConnection();
-        driver.get(amazonConfig.getInstance().getUrl());
     }
 
     /**
@@ -62,16 +61,6 @@ public class TrabajopolisUtils {
      */
     public void sendKey(final By locator, final String key) {
         driver.findElement(locator).sendKeys(key);
-    }
-
-    /**
-     * This method visit the page.
-     *
-     * @param url - The page for test.
-     */
-    public void visit(final String url) {
-        driver.get(url);
-        driver.manage().window().maximize();
     }
 
     /**
