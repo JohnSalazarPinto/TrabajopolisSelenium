@@ -30,7 +30,7 @@ public class Jobs extends TrabajopolisUtils {
      * @return value - Value for the assertion.
      */
     public static String searchInfo(final String name) {
-        String value = value(By.xpath(name));
+        String value = getMessage(By.xpath(name));
         return value;
     }
 }

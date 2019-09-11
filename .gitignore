@@ -3,3 +3,5 @@
 build/
 out/
 target/
+src/test/resources/logs/
+

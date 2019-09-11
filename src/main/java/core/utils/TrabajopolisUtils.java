@@ -80,7 +80,7 @@ public class TrabajopolisUtils {
      * @param locator - Locator type.
      * @return value - Text of the locator.
      */
-    public String getMessage(final By locator) {
+    public static String getMessage(final By locator) {
         String message = driver.findElement(locator).getText();
         return message;
     }

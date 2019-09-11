@@ -8,7 +8,6 @@ import org.junit.Assert;
 import project.ui.pages.PageTransport;
 import project.ui.pages.Jobs;
 import project.ui.pages.MainPage;
-import project.ui.pages.PageTransport;
 import project.ui.pages.ResultSearch;
 
 public class SimpleSearchStep {
@@ -39,7 +38,6 @@ public class SimpleSearchStep {
     @Then("the job {string} is displayed in the results page")
     public void theJobIsDisplayedInTheResultsPage(String keyWord) {
         ResultSearch.clickFirstResult();
-        System.out.println(Jobs.searchInfo("smallListingInfo"));
-        Assert.assertTrue(Jobs.searchInfo("smallListingInfo").contains(keyWord));
+        Assert.assertTrue(Jobs.searchInfo("//div[@id=\'rounded-lh-cap\']/ul/li[3]/div/div[4]").contains(keyWord));
     }
 }
