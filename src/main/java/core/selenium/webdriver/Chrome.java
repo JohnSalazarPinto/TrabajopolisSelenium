@@ -23,22 +23,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class Chrome {
+public class Chrome implements IBrowser {
     private static WebDriver driver;
 
-    /**
-     * Constructor class init the connection.
-     */
-    public void connection() {
-        driverConnection();
-    }
 
     /**
      * Method for connect with chrome.
      *
      * @return driver - WebDriver.
      */
-    public static WebDriver driverConnection() {
+    public WebDriver init() {
         ChromeDriverManager.getInstance().version("76.0.3809.126").setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--incognito");

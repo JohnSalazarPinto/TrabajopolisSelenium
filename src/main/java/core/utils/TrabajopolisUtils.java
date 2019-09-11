@@ -42,7 +42,6 @@ public class TrabajopolisUtils {
     public void driverConnection() {
         BasePage basePage = new BasePage();
         driver = basePage.driverConnection();
-        driver.get(amazonConfig.getInstance().getUrl());
     }
 
     /**
@@ -65,16 +64,6 @@ public class TrabajopolisUtils {
     }
 
     /**
-     * This method visit the page.
-     *
-     * @param url - The page for test.
-     */
-    public void visit(final String url) {
-        driver.get(url);
-        driver.manage().window().maximize();
-    }
-
-    /**
      * This method get the result for assert.
      *
      * @param locator - Locator type.
@@ -89,11 +78,11 @@ public class TrabajopolisUtils {
      * This method get the result for assert.
      *
      * @param locator - Locator type.
-     * @return value - Value for the assertion.
+     * @return value - Text of the locator.
      */
-    public String message(final By locator) {
-        String value = driver.findElement(locator).getText();
-        return value;
+    public String getMessage(final By locator) {
+        String message = driver.findElement(locator).getText();
+        return message;
     }
 
     /**
@@ -101,6 +90,13 @@ public class TrabajopolisUtils {
      */
     public void close() {
         driver.close();
+    }
+
+    /**
+     * This method quit the browser after of the test.
+     */
+    public void quit() {
+        driver.quit();
     }
 
     /**

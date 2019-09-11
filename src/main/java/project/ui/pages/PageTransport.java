@@ -12,6 +12,10 @@
 
 package project.ui.pages;
 
+import core.selenium.TrabajopolisConfig;
+import core.selenium.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+
 /**
  * PageTransport class.
  *
@@ -19,4 +23,34 @@ package project.ui.pages;
  * @version 1.0
  */
 public class PageTransport {
+    private static WebDriver driver;
+    private static TrabajopolisConfig amazonConfig;
+
+    /**
+     * Init driver.
+     */
+    public PageTransport() {
+        this.driver = WebDriverManager.getDriver();
+    }
+
+    /**
+     * This method visit the page.
+     */
+    public static void visitLogin() {
+        driver.get(amazonConfig.getInstance().getUrlLogin());
+    }
+
+    /**
+     * This method visit the profile page.
+     */
+    public static void visitProfile() {
+        driver.get(amazonConfig.getInstance().getUrlProfile());
+    }
+
+    /**
+     * This method visit the profile page.
+     */
+    public static void visitMainPage() {
+        driver.get(amazonConfig.getInstance().getUrlBase());
+    }
 }

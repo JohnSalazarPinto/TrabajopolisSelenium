@@ -1,5 +1,5 @@
 /*
- * @(#) BasePage.java Copyright (c) 2019 Jala Foundation.
+ * @(#) Jobs.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -10,27 +10,27 @@
  * with Jala Foundation.
  */
 
-package project.ui;
+package project.ui.pages;
 
-import core.selenium.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import core.utils.TrabajopolisUtils;
+import org.openqa.selenium.By;
 
 /**
- * BasePage class.
+ * Jobs class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class BasePage {
-    private WebDriver driver;
+public class Jobs extends TrabajopolisUtils {
 
     /**
-     * Method for connect with chrome.
+     * This method get the result for assert.
      *
-     * @return driver
+     * @param name - Name that locator contains.
+     * @return value - Value for the assertion.
      */
-    public WebDriver driverConnection() {
-        driver = WebDriverManager.getInstance().getDriver();
-        return driver;
+    public String searchInfo(final String name) {
+        String value = value(By.xpath(name));
+        return value;
     }
 }

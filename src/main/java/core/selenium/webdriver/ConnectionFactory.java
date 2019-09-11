@@ -15,6 +15,9 @@ package core.selenium.webdriver;
 import core.selenium.WebDriverConfig;
 import org.openqa.selenium.WebDriver;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * ConnectionFactory class.
  *
@@ -22,22 +25,21 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public class ConnectionFactory {
-    private WebDriverConfig webDriverConfig;
-    private WebDriver driver;
+    private static WebDriverConfig webDriverConfig = WebDriverConfig.getInstance();
+    private static final String FIREFOX = "firefox";
+    private static final String CHROME = "chrome";
+    private static WebDriver driver;
 
     /**
      * This method chosse the browser type accord of the properties.
      *
-     * @param browser - Type of Browser for the test.
      * @return driver - New browser driver.
      */
-    public WebDriver selector(final String browser) {
-        webDriverConfig.getInstance().getBrowser();
-        if (browser.contains("chrome")) {
-            driver = Chrome.driverConnection();
-        } else if (browser.contains("firefox")) {
-            driver = Firefox.driverConnection();
-        }
+    public static WebDriver selector() {
+        Map<String, IBrowser> strategyBrowser = new HashMap<>();
+        strategyBrowser.put(FIREFOX, new Firefox());
+        strategyBrowser.put(CHROME, new Chrome());
+        driver = strategyBrowser.get(webDriverConfig.getBrowser().toLowerCase()).init();
         return driver;
     }
 }

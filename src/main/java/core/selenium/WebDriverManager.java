@@ -31,7 +31,7 @@ public final class WebDriverManager {
      */
     private WebDriverManager() {
         ConnectionFactory connection = new ConnectionFactory();
-        driver = connection.selector(webDriverConfig.getInstance().getBrowser());
+        driver = connection.selector();
     }
 
     /**
@@ -51,7 +51,7 @@ public final class WebDriverManager {
      *
      * @return driver
      */
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 }
