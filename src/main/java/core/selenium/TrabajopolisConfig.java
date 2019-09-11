@@ -70,6 +70,7 @@ public final class TrabajopolisConfig {
             urlBase = properties.getProperty("urlBase");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            throw new NullPointerException("This file not exist!!");
         } catch (Exception e) {
             e.printStackTrace();
         }
