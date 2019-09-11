@@ -43,14 +43,14 @@ public class PageTransport {
     /**
      * This method visit the profile page.
      */
-    public void visitProfile() {
+    public static void visitProfile() {
         driver.get(amazonConfig.getInstance().getUrlProfile());
     }
 
     /**
      * This method visit the profile page.
      */
-    public void visitMainPage() {
+    public static void visitMainPage() {
         driver.get(amazonConfig.getInstance().getUrlBase());
     }
 }
