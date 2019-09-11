@@ -28,14 +28,14 @@ import project.ui.pages.PageTransport;
  * @version 1.0
  */
 public class LoginSteps {
-    private LoginPage loginPage ;
+    private LoginPage loginPage;
     private TrabajopolisConfig amazonConfig;
     private PageTransport pageTransport;
 
     /**
      * Constructor class init vulues.
      */
-    public LoginSteps(){
+    public LoginSteps() {
         this.loginPage = new LoginPage();
         this.pageTransport = new PageTransport();
     }

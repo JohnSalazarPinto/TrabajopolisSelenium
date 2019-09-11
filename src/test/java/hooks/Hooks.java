@@ -26,8 +26,11 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public class Hooks {
-    WebDriver driver;
+    private WebDriver driver;
 
+    /**
+     * Init driver.
+     */
     public Hooks() {
         this.driver = WebDriverManager.getInstance().getDriver();
     }
@@ -35,10 +38,10 @@ public class Hooks {
     /**
      * Takes a screenshot when a scenario is failed.
      *
-     * @param scenario
+     * @param scenario - Scenario that is running.
      */
     @After
-    public void tearDown(Scenario scenario) {
+    public void tearDown(final Scenario scenario) {
         if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");

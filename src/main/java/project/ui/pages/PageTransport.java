@@ -26,7 +26,10 @@ public class PageTransport {
     private static WebDriver driver;
     private static TrabajopolisConfig amazonConfig;
 
-    public PageTransport(){
+    /**
+     * Init driver.
+     */
+    public PageTransport() {
         this.driver = new BasePage().driverConnection();
     }
 

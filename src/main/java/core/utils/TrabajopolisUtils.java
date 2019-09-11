@@ -55,11 +55,11 @@ public class TrabajopolisUtils {
 
     /**
      * This method makes click action.
-     *
-    // * @param locator - Locator type for do the action.
      */
     public void clickMulti() {
-       driver.findElement(By.className("priorityListing")).findElement(By.className("anuncio-estandar-content")).findElement(By.className("anuncio-estandar-titulo")).click();
+        driver.findElement(By.className("priorityListing")).
+                findElement(By.className("anuncio-estandar-content")).
+                findElement(By.className("anuncio-estandar-titulo")).click();
     }
 
     /**
