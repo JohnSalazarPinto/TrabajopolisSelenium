@@ -1,4 +1,4 @@
-package runner;/*
+/*
  * @(#) RunCukesTest.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
@@ -10,16 +10,18 @@ package runner;/*
  * with Jala Foundation.
  */
 
+package runner;
 
 import core.report.GeneratorReport;
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import core.utils.TrabajopolisUtils;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterTest;
 
 /**
  * RunCukesTest class.
  *
- * @author Cristian Lujan
+ * @author John Salazar Pinto
  * @version 1.0
  */
 @CucumberOptions(
@@ -27,16 +29,19 @@ import org.testng.annotations.AfterTest;
                 "html:target/cucumber-pretty",
                 "json:target/cucumber.json",
                 "rerun:target/rerun.txt"},
-        glue = {"com/foundation/salesforce/steps", "com/foundation/salesforce/hooks"},
+        glue = {"steps", "hooks"},
         features = {"src/test/resources/features/"},
         monochrome = true)
 public class RunCukesTest extends AbstractTestNGCucumberTests {
+    private TrabajopolisUtils trabajopolisUtils;
 
     /**
      * The method afterExecution executes the project and generate it report.
      */
     @AfterTest
     public void afterExecution() {
+        trabajopolisUtils = new TrabajopolisUtils();
+        trabajopolisUtils.close();
         GeneratorReport.getInstance().generateReport();
     }
 }

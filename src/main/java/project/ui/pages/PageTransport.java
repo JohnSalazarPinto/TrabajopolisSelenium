@@ -23,13 +23,17 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class PageTransport {
-    private WebDriver driver = new BasePage().driverConnection();
-    private TrabajopolisConfig amazonConfig;
+    private static WebDriver driver;
+    private static TrabajopolisConfig amazonConfig;
+
+    public PageTransport(){
+        this.driver = new BasePage().driverConnection();
+    }
 
     /**
      * This method visit the page.
      */
-    public void visitLogin() {
+    public static void visitLogin() {
         driver.get(amazonConfig.getInstance().getUrlLogin());
     }
 

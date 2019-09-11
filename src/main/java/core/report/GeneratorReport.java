@@ -1,4 +1,4 @@
-package core.report;/*
+/*
  * @(#) GeneratorReport.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
@@ -9,6 +9,8 @@ package core.report;/*
  * accordance with the terms of the license agreement you entered into
  * with Jala Foundation.
  */
+
+package core.report;
 
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
@@ -21,9 +23,10 @@ import java.util.List;
 /**
  * GeneratorReport class.
  *
- * @author Cristian Lujan
+ * @author John Salazar Pinto
  * @version 1.0
-.*/
+ * .
+ */
 public class GeneratorReport {
 
     /**
@@ -42,15 +45,12 @@ public class GeneratorReport {
         final File reportOutputDirectory = new File("target");
         final List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add("target/cucumber.json");
-
         final String projectName = "Salesforce";
-        final boolean runWithJenkins = false;
-
         final Configuration configuration = new Configuration(reportOutputDirectory, projectName);
         // additional metadata presented on main page
         configuration.addClassifications("Branch", "RELEASE/1.0");
         final ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
-        final Reportable result = reportBuilder.generateReports();
         // and here validate 'result' to decide what to do if report has failed
+        final Reportable result = reportBuilder.generateReports();
     }
 }

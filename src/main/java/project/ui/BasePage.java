@@ -10,7 +10,6 @@
  * with Jala Foundation.
  */
 
-
 package project.ui;
 
 import core.selenium.WebDriverManager;

@@ -87,11 +87,11 @@ public class TrabajopolisUtils {
      * This method get the result for assert.
      *
      * @param locator - Locator type.
-     * @return value - Value for the assertion.
+     * @return value - Text of the locator.
      */
     public String message(final By locator) {
-        String value = driver.findElement(locator).getText();
-        return value;
+        String message = driver.findElement(locator).getText();
+        return message;
     }
 
     /**
@@ -99,6 +99,13 @@ public class TrabajopolisUtils {
      */
     public void close() {
         driver.close();
+    }
+
+    /**
+     * This method quit the browser after of the test.
+     */
+    public void quit() {
+        driver.quit();
     }
 
     /**
