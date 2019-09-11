@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  */
 public class TrabajopolisUtils {
-    private WebDriver driver;
+    private static WebDriver driver;
     private TrabajopolisConfig amazonConfig;
 
     /**
@@ -69,7 +69,7 @@ public class TrabajopolisUtils {
      * @param locator - Locator type.
      * @return value - Value for the assertion.
      */
-    public String value(final By locator) {
+    public static String value(final By locator) {
         String value = driver.findElement(locator).getAttribute("value");
         return value;
     }

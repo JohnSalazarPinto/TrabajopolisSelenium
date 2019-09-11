@@ -1,9 +1,9 @@
 Feature: Simple search
 
   Scenario: Search for a job by a keyword
-    When the user unregistered navigates to principal/search page
+    When the user unregistered navigates to principal search page
     And the user searches for a job by "Gerente en Ventas" keyword
-    Then the job "Gerente en Ventas" is displayed in the results page
+    Then the job "ventas" is displayed in the results page
 
   Scenario: Search for a job by a keyword, category, city, posted within number days and type of contract
     When the user unregistered navigates to principal/search page

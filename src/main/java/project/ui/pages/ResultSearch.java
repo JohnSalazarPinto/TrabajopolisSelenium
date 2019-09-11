@@ -27,7 +27,7 @@ public class ResultSearch extends TrabajopolisUtils {
     /**
      * This method makes click action on the first result from a search.
      */
-    public void clickFirstResult() {
+    public static void clickFirstResult() {
         WebDriverManager.getDriver().findElement(By.className("priorityListing")).
                 findElement(By.className("anuncio-estandar-content")).
                 findElement(By.className("anuncio-estandar-titulo")).click();

@@ -29,7 +29,7 @@ public class Jobs extends TrabajopolisUtils {
      * @param name - Name that locator contains.
      * @return value - Value for the assertion.
      */
-    public String searchInfo(final String name) {
+    public static String searchInfo(final String name) {
         String value = value(By.xpath(name));
         return value;
     }

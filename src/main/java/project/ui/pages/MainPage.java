@@ -38,6 +38,4 @@ public class MainPage extends TrabajopolisUtils {
     public void search() {
         click(By.id("btnSearch"));
     }
-
-
 }
