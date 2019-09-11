@@ -13,8 +13,8 @@
 package project.ui.pages;
 
 import core.selenium.TrabajopolisConfig;
+import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import project.ui.BasePage;
 
 /**
  * PageTransport class.
@@ -30,7 +30,7 @@ public class PageTransport {
      * Init driver.
      */
     public PageTransport() {
-        this.driver = new BasePage().driverConnection();
+        this.driver = WebDriverManager.getDriver();
     }
 
     /**

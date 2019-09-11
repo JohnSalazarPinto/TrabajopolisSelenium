@@ -54,15 +54,6 @@ public class TrabajopolisUtils {
     }
 
     /**
-     * This method makes click action.
-     */
-    public void clickMulti() {
-        driver.findElement(By.className("priorityListing")).
-                findElement(By.className("anuncio-estandar-content")).
-                findElement(By.className("anuncio-estandar-titulo")).click();
-    }
-
-    /**
      * This method works for fill data.
      *
      * @param locator - where we will fill the data.
@@ -89,7 +80,7 @@ public class TrabajopolisUtils {
      * @param locator - Locator type.
      * @return value - Text of the locator.
      */
-    public String message(final By locator) {
+    public String getMessage(final By locator) {
         String message = driver.findElement(locator).getText();
         return message;
     }

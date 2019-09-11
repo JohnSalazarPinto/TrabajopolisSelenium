@@ -13,6 +13,8 @@
 package core.selenium;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -66,6 +68,8 @@ public final class TrabajopolisConfig {
             urlLogin = properties.getProperty("urlLogin");
             urlProfile = properties.getProperty("urlProfile");
             urlBase = properties.getProperty("urlBase");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

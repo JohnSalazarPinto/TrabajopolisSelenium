@@ -45,7 +45,7 @@ public class LoginSteps {
      */
     @Given("the user goes to login page")
     public void userGoToLoginPage() {
-        pageTransport.visitLogin();
+        PageTransport.visitLogin();
     }
 
     /**
@@ -61,8 +61,8 @@ public class LoginSteps {
      */
     @Then("user login successfully")
     public void userLoginSuccefuly() {
-        pageTransport.visitLogin();
-        Assert.assertEquals(loginPage.message(By.className("indexDiv")),
+        PageTransport.visitLogin();
+        Assert.assertEquals(loginPage.getMessage(By.className("indexDiv")),
                 "Usted Está Conectado Como johnpiterzon@gmail.com");
     }
 
@@ -71,7 +71,7 @@ public class LoginSteps {
      */
     @Given("the user goes to account page")
     public void theUserGoesToAcoountPage() {
-        pageTransport.visitProfile();
+        PageTransport.visitProfile();
     }
 
     /**
@@ -79,6 +79,6 @@ public class LoginSteps {
      */
     @Then("user confirm his correct data successfully")
     public void userConfirmHisCorrectDataSuccessfully() {
-        Assert.assertEquals(loginPage.message(), "johnpiterzon@gmail.com");
+        Assert.assertEquals(loginPage.getText(), "johnpiterzon@gmail.com");
     }
 }

@@ -1,5 +1,5 @@
 /*
- * @(#) MainPage.java Copyright (c) 2019 Jala Foundation.
+ * @(#) ResultSearch.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -12,32 +12,24 @@
 
 package project.ui.pages;
 
+import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.By;
 
 /**
- * MainPage class.
+ * ResultSearch class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class MainPage extends TrabajopolisUtils {
+public class ResultSearch extends TrabajopolisUtils {
 
     /**
-     * This method works for fill data.
-     *
-     * @param key - Data that will be fill.
+     * This method makes click action on the first result from a search.
      */
-    public void sendKeyWord(final String key) {
-        sendKey(By.id("keywords"), key);
+    public void clickFirstResult() {
+        WebDriverManager.getDriver().findElement(By.className("priorityListing")).
+                findElement(By.className("anuncio-estandar-content")).
+                findElement(By.className("anuncio-estandar-titulo")).click();
     }
-
-    /**
-     * This method makes click action.
-     */
-    public void search() {
-        click(By.id("btnSearch"));
-    }
-
-
 }

@@ -39,7 +39,7 @@ public class LoginPage extends TrabajopolisUtils {
      * Get the result of the math operation.
      * @return message - Message that contains a locator.
      */
-    public String message() {
-        return message(By.cssSelector("fieldset:nth-child(3) > .inputField"));
+    public String getText() {
+        return getMessage(By.cssSelector("fieldset:nth-child(3) > .inputField"));
     }
 }

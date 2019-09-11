@@ -51,7 +51,7 @@ public final class WebDriverManager {
      *
      * @return driver
      */
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 }
