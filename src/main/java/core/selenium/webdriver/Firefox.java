@@ -23,22 +23,15 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class Firefox {
+public class Firefox implements IBrowser{
     private static WebDriver driver;
-
-    /**
-     * Constructor class init the connection.
-     */
-    public void connection() {
-        driverConnection();
-    }
 
     /**
      * Method for connect with firefox.
      *
      * @return driver
      */
-    public static WebDriver driverConnection() {
+    public WebDriver init() {
         FirefoxDriverManager.getInstance().version("0.24.0").setup();
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.addArguments("--incognito");
