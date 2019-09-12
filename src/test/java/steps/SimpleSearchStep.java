@@ -10,6 +10,8 @@ import project.ui.pages.Jobs;
 import project.ui.pages.MainPage;
 import project.ui.pages.ResultSearch;
 
+import java.util.Map;
+
 public class SimpleSearchStep {
     private PageTransport pageTransport = new PageTransport();
     private MainPage mainPage = new MainPage();
@@ -40,4 +42,12 @@ public class SimpleSearchStep {
         ResultSearch.clickFirstResult();
         Assert.assertTrue(Jobs.searchInfo("//div[@id=\'rounded-lh-cap\']/ul/li[3]/div/div[4]").contains(keyWord));
     }
+
+    @And("the us  er searches with the following characteristics")
+    public void theUsErSearchesWithTheFollowingCharacteristics(Map<String, String> bodyFields) {
+        PageTransport.visitMainPage();
+        mainPage.sendKeyWord(bodyFields.get("keyword"));
+        mainPage.selectJobsCategory(bodyFields.get("Category"));
+    }
+
 }

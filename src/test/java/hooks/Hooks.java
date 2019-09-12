@@ -14,6 +14,7 @@ package hooks;
 
 import core.selenium.WebDriverManager;
 import cucumber.api.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import cucumber.api.Scenario;
@@ -46,5 +47,10 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
         }
+    }
+
+    @Before("@Hello")
+    public void hello() {
+        System.out.println("helloooooo");
     }
 }

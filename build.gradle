@@ -50,4 +50,7 @@ dependencies {
     compile group: 'net.masterthought', name: 'cucumber-reporting', version: '4.6.0'
     compile group: 'io.cucumber', name: 'cucumber-testng', version: '4.7.1'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    // https://mvnrepository.com/artifact/com.indvd00m.ascii.render/java-ascii-render
+    compile group: 'com.indvd00m.ascii.render', name: 'java-ascii-render', version: '2.1.2', ext: 'pom'
+
 }

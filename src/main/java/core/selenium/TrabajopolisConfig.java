@@ -71,8 +71,9 @@ public final class TrabajopolisConfig {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             throw new NullPointerException("This file not exist!!");
+
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();//throw new nullpointeexxception("message")
         }
         return properties;
     }

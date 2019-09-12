@@ -12,8 +12,10 @@
 
 package project.ui.pages;
 
+import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  * MainPage class.
@@ -37,5 +39,14 @@ public class MainPage extends TrabajopolisUtils {
      */
     public void search() {
         click(By.id("btnSearch"));
+    }
+
+    /**
+     * This method makes click action.
+     */
+    public void selectJobsCategory(String value) {
+        WebDriverManager.getDriver().findElement(By.xpath("//*[@id=\"quickSearchForm\"]/form/fieldset[1]/div[1]/select/option[3]")).click();
+        new Select(WebDriverManager.getDriver().findElement(By.id("quickSearchForm")).
+                findElement(By.name("JobCategory[multi_like][]"))).selectByValue(value);
     }
 }

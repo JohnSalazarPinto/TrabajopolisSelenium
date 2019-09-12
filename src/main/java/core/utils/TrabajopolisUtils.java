@@ -49,7 +49,7 @@ public class TrabajopolisUtils {
      *
      * @param locator - Locator type for do the action.
      */
-    public void click(final By locator) {
+    public static void click(final By locator) {
         driver.findElement(locator).click();
     }
 
@@ -59,7 +59,7 @@ public class TrabajopolisUtils {
      * @param locator - where we will fill the data.
      * @param key     - Data that will be fill.
      */
-    public void sendKey(final By locator, final String key) {
+    public static void sendKey(final By locator, final String key) {
         driver.findElement(locator).sendKeys(key);
     }
 
@@ -107,4 +107,12 @@ public class TrabajopolisUtils {
     public void implicitWait(final int wait) {
         driver.manage().timeouts().implicitlyWait(wait, TimeUnit.SECONDS);
     }
+
+    public static void visit(final String url){
+        driver.get(url);
+    }
+
+//    public static void clean(){
+//        driver.
+//    }
 }
