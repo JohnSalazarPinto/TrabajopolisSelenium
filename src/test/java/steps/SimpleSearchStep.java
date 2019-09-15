@@ -13,7 +13,6 @@
 package steps;
 
 import cucumber.api.java.en.When;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import project.ui.pages.*;
@@ -54,7 +53,7 @@ public class SimpleSearchStep {
      *
      * @param keyWord - User key word for the search.
      */
-    @And("the user searches for a job by {string} keyword")
+    @When("the user searches for a job by {string} keyword")
     public void theUserSearchesForAJobByKeyword(final String keyWord) {
         mainPage.fillSimpleSearch(keyWord);
         mainPage.clickSearch();
@@ -76,7 +75,7 @@ public class SimpleSearchStep {
      *
      * @param bodyFields - User data search.
      */
-    @And("the user searches with the following characteristics")
+    @When("the user searches with the following characteristics")
     public void theUsErSearchesWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
         mainPage.fillSimpleSearch(bodyFields.get("keyword"));
         mainPage.setText(bodyFields.get("Category"), bodyFields.get("City"),
