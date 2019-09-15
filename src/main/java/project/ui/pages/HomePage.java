@@ -1,5 +1,5 @@
 /*
- * @(#) CommonHooks.java Copyright (c) 2019 Jala Foundation.
+ * @(#) HomePage.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -10,18 +10,14 @@
  * with Jala Foundation.
  */
 
-package hooks;
+package project.ui.pages;
 
+/**
+ * HomePage class.
+ *
+ * @author John Salazar Pinto
+ * @version 1.0
+ */
+public class HomePage {
 
-import cucumber.api.java.After;
-
-public class CommonHooks {
-
-    /**
-     * Deletes created Case after scenarios.
-     */
-    @After(value = "@CaseCreation")
-    public void deleteCaseAfterCreation() {
-        System.out.println("johnjohnojohnljohn");
-    }
 }

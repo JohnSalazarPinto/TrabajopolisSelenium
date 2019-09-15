@@ -14,7 +14,6 @@ package core.selenium;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -32,7 +31,9 @@ public final class TrabajopolisConfig {
     private String urlLogin;
     private String urlProfile;
     private String urlBase;
-    private static TrabajopolisConfig amazonConfig;
+    private static TrabajopolisConfig trabajopolisConfig;
+    private String urlCurriculum;
+    private String urlFillCurriculum;
 
     /**
      * Constructor sets properties.
@@ -44,13 +45,13 @@ public final class TrabajopolisConfig {
     /**
      * Gets instance for init properties.
      *
-     * @return amazonConfig
+     * @return trabajopolisConfig
      */
     public static TrabajopolisConfig getInstance() {
-        if (amazonConfig == null) {
-            amazonConfig = new TrabajopolisConfig();
+        if (trabajopolisConfig == null) {
+            trabajopolisConfig = new TrabajopolisConfig();
         }
-        return amazonConfig;
+        return trabajopolisConfig;
     }
 
     /**
@@ -68,12 +69,14 @@ public final class TrabajopolisConfig {
             urlLogin = properties.getProperty("urlLogin");
             urlProfile = properties.getProperty("urlProfile");
             urlBase = properties.getProperty("urlBase");
+            urlCurriculum = properties.getProperty("urlCurriculum");
+            urlFillCurriculum = properties.getProperty("urlFillCurriculum");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             throw new NullPointerException("This file not exist!!");
 
         } catch (Exception e) {
-            e.printStackTrace();//throw new nullpointeexxception("message")
+            e.printStackTrace();
         }
         return properties;
     }
@@ -81,7 +84,7 @@ public final class TrabajopolisConfig {
     /**
      * Gets username.
      *
-     * @return username - Credential for login.
+     * @return username - Credential for loginSuccessfully.
      */
     public String getUsername() {
         return username;
@@ -90,7 +93,7 @@ public final class TrabajopolisConfig {
     /**
      * Gets password.
      *
-     * @return password - Credential for login.
+     * @return password - Credential for loginSuccessfully.
      */
     public String getPassword() {
         return password;
@@ -121,5 +124,23 @@ public final class TrabajopolisConfig {
      */
     public String getUrlBase() {
         return urlBase;
+    }
+
+    /**
+     * Gets urlCurriculum.
+     *
+     * @return urlCurriculum - Page transport.
+     */
+    public String getUrlCurriculum() {
+        return urlCurriculum;
+    }
+
+    /**
+     * Gets urlFillCurriculum.
+     *
+     * @return urlFillCurriculum - Page transport.
+     */
+    public String getUrlFillCurriculum() {
+        return urlFillCurriculum;
     }
 }

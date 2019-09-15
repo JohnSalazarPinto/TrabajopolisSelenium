@@ -13,11 +13,12 @@
 package steps;
 
 import core.selenium.TrabajopolisConfig;
+import core.selenium.WebDriverManager;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
+import project.ui.pages.HomePage;
 import project.ui.pages.LoginPage;
 import project.ui.pages.PageTransport;
 
@@ -29,19 +30,18 @@ import project.ui.pages.PageTransport;
  */
 public class LoginSteps {
     private LoginPage loginPage;
-    private TrabajopolisConfig amazonConfig;
-    private PageTransport pageTransport;
+    HomePage homePage;
 
     /**
      * Constructor class init vulues.
      */
     public LoginSteps() {
         this.loginPage = new LoginPage();
-        this.pageTransport = new PageTransport();
+        new PageTransport();
     }
 
     /**
-     * This stps do click on register seccion.
+     * This step do click on register seccion.
      */
     @Given("the user goes to login page")
     public void userGoToLoginPage() {
@@ -49,36 +49,20 @@ public class LoginSteps {
     }
 
     /**
-     * Fills all data for user login.
+     * Fills all data for user loginSuccessfully.
      */
     @When("the user puts his username and password")
     public void userPutUsernameAndPassword() {
-        loginPage.fillUserNamePassword();
+        String userName = TrabajopolisConfig.getInstance().getUsername();
+        String password = TrabajopolisConfig.getInstance().getPassword();
+        loginPage.loginSuccessfully(userName, password);
     }
 
     /**
-     * Get a message of new Authentication.
+     * User confirm his login by title of the new page.
      */
     @Then("user login successfully")
-    public void userLoginSuccefuly() {
-        PageTransport.visitLogin();
-        Assert.assertEquals(loginPage.getMessage(By.className("indexDiv")),
-                "Usted Está Conectado Como johnpiterzon@gmail.com");
-    }
-
-    /**
-     * Goes to account page.
-     */
-    @Given("the user goes to account page")
-    public void theUserGoesToAcoountPage() {
-        PageTransport.visitProfile();
-    }
-
-    /**
-     * Get a message of new Authentication.
-     */
-    @Then("user confirm his correct data successfully")
-    public void userConfirmHisCorrectDataSuccessfully() {
-        Assert.assertEquals(loginPage.getText(), "johnpiterzon@gmail.com");
+    public void userLoginSuccessfully() {
+        Assert.assertTrue(WebDriverManager.getDriver().getTitle().contains("Curriculum | Trabajopolis.bo"));
     }
 }

@@ -14,6 +14,7 @@ package project.ui;
 
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * BasePage class.
@@ -26,11 +27,9 @@ public class BasePage {
 
     /**
      * Method for connect with chrome.
-     *
-     * @return driver
      */
-    public WebDriver driverConnection() {
+    public BasePage() {
         driver = WebDriverManager.getInstance().getDriver();
-        return driver;
+        PageFactory.initElements(driver, this);
     }
 }

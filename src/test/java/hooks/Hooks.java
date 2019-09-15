@@ -14,11 +14,14 @@ package hooks;
 
 import core.selenium.WebDriverManager;
 import cucumber.api.java.After;
-import io.cucumber.java.Before;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import cucumber.api.Scenario;
 import org.openqa.selenium.WebDriver;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Hooks class.
@@ -49,8 +52,14 @@ public class Hooks {
         }
     }
 
-    @Before("@Hello")
-    public void hello() {
-        System.out.println("helloooooo");
+    /**
+     * This method delete the last curriculum.
+     */
+    @After("@DeleteCurriculum")
+    public void deleteCurriculum() {
+        driver.get("https://www.trabajopolis.bo/my-listings/");
+        driver.findElement(By.linkText("Eliminar")).click();
+        assertThat(driver.switchTo().alert().getText(), is("Por favor confirme que desea eliminar el currículo seleccionado. \nEsta acción no se puede deshacer."));
+        driver.switchTo().alert().accept();
     }
 }

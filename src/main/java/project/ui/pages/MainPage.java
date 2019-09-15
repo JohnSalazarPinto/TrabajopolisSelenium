@@ -12,10 +12,10 @@
 
 package project.ui.pages;
 
-import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import project.ui.BasePage;
 
 /**
  * MainPage class.
@@ -23,7 +23,25 @@ import org.openqa.selenium.support.ui.Select;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class MainPage extends TrabajopolisUtils {
+public class MainPage extends BasePage {
+
+    @FindBy(id = "keywords")
+    private WebElement keyword;
+
+    @FindBy(id = "btnSearch")
+    private WebElement searchButton;
+
+    @FindBy(name = "JobCategory[multi_like][]")
+    private WebElement jobComboBox;
+
+    @FindBy(name = "CityBolivia[multi_like][]")
+    private WebElement cityComboBox;
+
+    @FindBy(name = "PostedWithin[multi_like][]")
+    private WebElement postedWithinComboBox;
+
+    @FindBy(name = "EmploymentType[multi_like][]")
+    private WebElement employmentTypeComboBox;
 
     /**
      * This method works for fill data.
@@ -31,22 +49,38 @@ public class MainPage extends TrabajopolisUtils {
      * @param key - Data that will be fill.
      */
     public void sendKeyWord(final String key) {
-        sendKey(By.id("keywords"), key);
+        TrabajopolisUtils.setText(keyword, key);
+    }
+
+    /**
+     * This method send key word to text field.
+     *
+     * @param keyWord - Key word for search a job.
+     */
+    public void fillSimpleSearch(final String keyWord) {
+        sendKeyWord(keyWord);
     }
 
     /**
      * This method makes click action.
      */
-    public void search() {
-        click(By.id("btnSearch"));
+    public void clickSearch() {
+        TrabajopolisUtils.click(searchButton);
     }
 
     /**
-     * This method makes click action.
+     * This method works for fill data.
+     *
+     * @param key  - Data that will be fill.
+     * @param city - City for search.
+     * @param type - Type for search.
+     * @param time - Time for search.
      */
-    public void selectJobsCategory(String value) {
-        WebDriverManager.getDriver().findElement(By.xpath("//*[@id=\"quickSearchForm\"]/form/fieldset[1]/div[1]/select/option[3]")).click();
-        new Select(WebDriverManager.getDriver().findElement(By.id("quickSearchForm")).
-                findElement(By.name("JobCategory[multi_like][]"))).selectByValue(value);
+    public void setText(final String key, final String city, final String type, final String time) {
+        TrabajopolisUtils.selectComboBox(jobComboBox, key);
+        TrabajopolisUtils.selectComboBox(cityComboBox, city);
+        TrabajopolisUtils.selectComboBox(employmentTypeComboBox, type);
+        TrabajopolisUtils.selectComboBox(postedWithinComboBox, time);
     }
+
 }

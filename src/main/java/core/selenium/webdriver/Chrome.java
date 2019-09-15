@@ -26,7 +26,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Chrome implements IBrowser {
     private static WebDriver driver;
 
-
     /**
      * Method for connect with chrome.
      *

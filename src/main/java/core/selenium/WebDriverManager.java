@@ -22,7 +22,6 @@ import org.openqa.selenium.WebDriver;
  * @version 1.0
  */
 public final class WebDriverManager {
-    private WebDriverConfig webDriverConfig;
     private static WebDriver driver;
     private static WebDriverManager webDriverManager;
 

@@ -1,5 +1,5 @@
 /*
- * @(#) Jobs.java Copyright (c) 2019 Jala Foundation.
+ * @(#) CurriculumManager.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -13,24 +13,25 @@
 package project.ui.pages;
 
 import core.utils.TrabajopolisUtils;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import project.ui.BasePage;
 
 /**
- * Jobs class.
+ * CurriculumManager class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class Jobs extends TrabajopolisUtils {
+public class CurriculumManager extends BasePage {
+
+    @FindBy(xpath = "//*[@id=\"maindDivBg\"]/div[6]/p[4]/a[2]")
+    private WebElement reviewCurriculumButton;
 
     /**
-     * This method get the result for assert.
-     *
-     * @param name - Name that locator contains.
-     * @return value - Value for the assertion.
+     * This method do click on the button for review the curriculum tha was created.
      */
-    public static String searchInfo(final String name) {
-        String value = getMessage(By.xpath(name));
-        return value;
+    public void clickCurriculum() {
+        TrabajopolisUtils.click(reviewCurriculumButton);
     }
 }

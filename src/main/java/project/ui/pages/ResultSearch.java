@@ -12,9 +12,10 @@
 
 package project.ui.pages;
 
-import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import project.ui.BasePage;
 
 /**
  * ResultSearch class.
@@ -22,14 +23,22 @@ import org.openqa.selenium.By;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class ResultSearch extends TrabajopolisUtils {
+public class ResultSearch extends BasePage {
+
+    @FindBy(css = "tr[class='priorityListing']:nth-child(2) b")
+    private WebElement cssElement;
 
     /**
-     * This method makes click action on the first result from a search.
+     * This method do click on the first result of the Result page.
      */
-    public static void clickFirstResult() {
-        WebDriverManager.getDriver().findElement(By.className("priorityListing")).
-                findElement(By.className("anuncio-estandar-content")).
-                findElement(By.className("anuncio-estandar-titulo")).click();
+    private void clickFirstElement() {
+        TrabajopolisUtils.click(cssElement);
+    }
+
+    /**
+     * This method makes click action on the first result from a clickSearch.
+     */
+    public void clickFirstResult() {
+        clickFirstElement();
     }
 }

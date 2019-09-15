@@ -13,9 +13,11 @@
 package core.utils;
 
 import core.selenium.TrabajopolisConfig;
+import core.selenium.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import project.ui.BasePage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,23 +28,63 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  */
 public class TrabajopolisUtils {
-    private static WebDriver driver;
+    private static WebDriver driver = WebDriverManager.getInstance().getDriver();
     private TrabajopolisConfig amazonConfig;
 
     /**
-     * Constructor class init connection for set driver.
+     * This method select an option from combo box.
+     *
+     * @param webElement - WebElement of the combo box
+     * @param value      - Option of the combo box
      */
-    public TrabajopolisUtils() {
-        driverConnection();
+    public static void selectComboBox(final WebElement webElement, final String value) {
+        new Select(webElement).selectByValue(value);
+
     }
 
     /**
-     * Method for connect with chrome.
+     * This method select date on date helper.
+     *
+     * @param webElementMonth - WebElement for select month.
+     * @param webElementYear  - WebElement for select year.
+     * @param value           - Number of the day.
      */
-    public void driverConnection() {
-        BasePage basePage = new BasePage();
-        driver = basePage.driverConnection();
+    public static void selectDate(final WebElement webElementMonth,
+                                  final WebElement webElementYear, final String value) {
+        String[] date = value.split("-");
+        date[1] = String.valueOf(Integer.parseInt(date[1]) - 1);
+        selectComboBox(webElementMonth, date[1]);
+        selectComboBox(webElementYear, date[2]);
+        selectDateDay(Integer.parseInt(date[0]));
     }
+
+    /**
+     * This method do click on the day of the table date helper.
+     *
+     * @param day - Number of the day.
+     */
+    public static void selectDateDay(final int day) {
+        int row = 6;
+        int column = 7;
+        int dayForm;
+        for (int i = 1; i <= row; i++) {
+            for (int j = 1; j <= column; j++) {
+                try {
+                    dayForm = Integer.parseInt(driver.findElement(
+                            By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[" + i + "]/td[" + j + "]/a"))
+                            .getText());
+                } catch (Exception e) {
+                    continue;
+                }
+                if (dayForm == day) {
+                    driver.findElement(
+                            By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[" + i + "]/td[" + j + "]/a"))
+                            .click();
+                }
+            }
+        }
+    }
+
 
     /**
      * This method makes click action.
@@ -54,13 +96,23 @@ public class TrabajopolisUtils {
     }
 
     /**
+     * This method makes click action.
+     *
+     * @param element - Element type for do the action.
+     */
+    public static void click(final WebElement element) {
+        element.click();
+    }
+
+    /**
      * This method works for fill data.
      *
-     * @param locator - where we will fill the data.
-     * @param key     - Data that will be fill.
+     * @param element - WebElement of the text field.
+     * @param text    - String for the text field.
      */
-    public static void sendKey(final By locator, final String key) {
-        driver.findElement(locator).sendKeys(key);
+    public static void setText(final WebElement element, final String text) {
+        element.clear();
+        element.sendKeys(text);
     }
 
     /**
@@ -77,11 +129,11 @@ public class TrabajopolisUtils {
     /**
      * This method get the result for assert.
      *
-     * @param locator - Locator type.
+     * @param element - Locator type.
      * @return value - Text of the locator.
      */
-    public static String getMessage(final By locator) {
-        String message = driver.findElement(locator).getText();
+    public static String getMessage(final WebElement element) {
+        String message = element.getText();
         return message;
     }
 
@@ -107,12 +159,4 @@ public class TrabajopolisUtils {
     public void implicitWait(final int wait) {
         driver.manage().timeouts().implicitlyWait(wait, TimeUnit.SECONDS);
     }
-
-    public static void visit(final String url){
-        driver.get(url);
-    }
-
-//    public static void clean(){
-//        driver.
-//    }
 }

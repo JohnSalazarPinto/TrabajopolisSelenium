@@ -12,9 +12,10 @@
 
 package project.ui.pages;
 
-import core.selenium.TrabajopolisConfig;
 import core.utils.TrabajopolisUtils;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import project.ui.BasePage;
 
 /**
  * LoginPage class.
@@ -22,24 +23,55 @@ import org.openqa.selenium.By;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class LoginPage extends TrabajopolisUtils {
-    private TrabajopolisConfig amazonConfig;
+public class LoginPage extends BasePage {
+    @FindBy(name = "username")
+    private WebElement userTextBox;
+
+    @FindBy(name = "password")
+    private WebElement passwordTextBox;
+
+    @FindBy(css = ".button")
+    private WebElement loginBtn;
 
     /**
-     * Fills user name and password.
+     * This method send username.
+     *
+     * @param userName - User username.
      */
-    public void fillUserNamePassword() {
-        sendKey(By.name("username"), amazonConfig.getInstance().getUsername());
-        sendKey(By.name("password"), amazonConfig.getInstance().getPassword());
-        click(By.cssSelector("fieldset:nth-child(5)"));
-        click(By.cssSelector(".button"));
+    private void setUserName(final String userName) {
+        TrabajopolisUtils.setText(userTextBox, userName);
     }
 
     /**
-     * Get the result of the math operation.
-     * @return message - Message that contains a locator.
+     * This method sends password.
+     *
+     * @param password - User password.
      */
-    public String getText() {
-        return getMessage(By.cssSelector("fieldset:nth-child(3) > .inputField"));
+    private void setPassword(final String password) {
+        TrabajopolisUtils.setText(passwordTextBox, password);
+    }
+
+    /**
+     * This method do click on login button.
+     *
+     * @return hompage - Curriculum home page.
+     */
+    private HomePage clickLoginBtn() {
+        TrabajopolisUtils.click(loginBtn);
+        return new HomePage();
+    }
+
+
+    /**
+     * Fills user name and password.
+     *
+     * @param userName - User username
+     * @param password - User password
+     * @return hompage - Curriculum home page.
+     */
+    public HomePage loginSuccessfully(final String userName, final String password) {
+        setUserName(userName);
+        setPassword(password);
+        return clickLoginBtn();
     }
 }
