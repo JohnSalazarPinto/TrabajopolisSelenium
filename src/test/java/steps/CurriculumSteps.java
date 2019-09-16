@@ -14,7 +14,11 @@ package steps;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import project.ui.pages.*;
+import project.ui.pages.FormPageFour;
+import project.ui.pages.FormPageThree;
+import project.ui.pages.FormPageTwo;
+import project.ui.pages.FormPageOne;
+import project.ui.pages.CurriculumManager;
 
 import java.util.Map;
 
@@ -43,7 +47,7 @@ public class CurriculumSteps {
     }
 
     /**
-     * User navigates CV sumary page
+     * User navigates CV summary page
      */
     @When("the user navigates CV summary page")
     public void theUserNavigatesCurriculumPage() {

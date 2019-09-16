@@ -15,7 +15,10 @@ package steps;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
-import project.ui.pages.*;
+import project.ui.pages.MainPage;
+import project.ui.pages.JobOffer;
+import project.ui.pages.PageTransport;
+import project.ui.pages.ResultSearch;
 
 import java.util.Map;
 

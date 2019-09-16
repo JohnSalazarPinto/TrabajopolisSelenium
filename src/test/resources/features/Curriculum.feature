@@ -1,4 +1,4 @@
-Feature: creates curriculums
+Feature: Creates Curriculums
 
   @DeleteCurriculum
   Scenario: User create a curriculum with the minimum data required
