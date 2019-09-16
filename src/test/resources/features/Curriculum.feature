@@ -6,13 +6,13 @@ Feature: creates curriculums
     And the user puts his username and password
     When the user navigates CV summary page
     And the user fill the data in the first form page with the following characteristics
-      | Nombre              | John          |
-      | Apellido            | Salazar Pinto |
-      | Celular             | 63888303      |
+      | Nombre              | Pedro          |
+      | Apellido            | Perez Pereira |
+      | Celular             | 47436272      |
       | Documento           | Pasaporte     |
-      | Numero documento    | 202020        |
-      | Fecha de nacimiento | 14-10-1992    |
-      | Direccion           | Av america    |
+      | Numero documento    | 47385675        |
+      | Fecha de nacimiento | 25-12-1980    |
+      | Direccion           | Av Bolivia    |
       | Estado civil        | Soltero(a)    |
     And the user fill the data in the second form page with the following characteristics
       | Cargo en la empresa  | Ingeniero  |
