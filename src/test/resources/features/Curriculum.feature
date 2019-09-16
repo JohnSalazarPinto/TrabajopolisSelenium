@@ -6,11 +6,11 @@ Feature: creates curriculums
     And the user puts his username and password
     When the user navigates CV summary page
     And the user fill the data in the first form page with the following characteristics
-      | Nombre              | Pedro          |
+      | Nombre              | Pedro         |
       | Apellido            | Perez Pereira |
       | Celular             | 47436272      |
       | Documento           | Pasaporte     |
-      | Numero documento    | 47385675        |
+      | Numero documento    | 47385675      |
       | Fecha de nacimiento | 25-12-1980    |
       | Direccion           | Av Bolivia    |
       | Estado civil        | Soltero(a)    |
