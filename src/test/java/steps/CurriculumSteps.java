@@ -12,13 +12,11 @@
 
 package steps;
 
+import Trabajopolis.entities.Context;
+import Trabajopolis.ui.pages.*;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import project.ui.pages.FormPageFour;
-import project.ui.pages.FormPageThree;
-import project.ui.pages.FormPageTwo;
-import project.ui.pages.FormPageOne;
-import project.ui.pages.CurriculumManager;
+import org.junit.Assert;
 
 import java.util.Map;
 
@@ -34,6 +32,8 @@ public class CurriculumSteps {
     private FormPageThree formPageThree;
     private FormPageFour formPageFour;
     private CurriculumManager curriculumManager;
+    private Context context;
+    private CurriculumPage curriculumPage;
 
     /**
      * Constructor class init vulues.
@@ -44,6 +44,8 @@ public class CurriculumSteps {
         this.formPageThree = new FormPageThree();
         this.formPageFour = new FormPageFour();
         this.curriculumManager = new CurriculumManager();
+        this.context = new Context();
+        this.curriculumPage = new CurriculumPage();
     }
 
     /**
@@ -70,6 +72,9 @@ public class CurriculumSteps {
         String sex = bodyFields.get("Sexo");
         String address = bodyFields.get("Direccion");
         String civilStatus = bodyFields.get("Estado civil");
+        context.getCurriculum().setName(name);
+        context.getCurriculum().setLastName(lastName);
+        context.getCurriculum().setDateBorn(born);
         formPageOne.fillCurriculumFormPageOne(name, lastName, cellPhone, idDocument, address);
         System.out.println(born);
         formPageOne.fillOptions(civilStatus, document, born);
@@ -137,6 +142,8 @@ public class CurriculumSteps {
         String country = bodyFields.get("País de residencia");
         String city = bodyFields.get("Ciudad actual");
         String curriculumPrivacity = bodyFields.get("Privacidad del Currículum");
+        context.getCurriculum().setTitle(title);
+        context.getCurriculum().setSalary(salaryPretension);
         formPageFour.fillForm(title, salaryPretension);
         formPageFour.fillComboForm(category, contract, country, city, curriculumPrivacity);
     }
@@ -147,5 +154,6 @@ public class CurriculumSteps {
     @Then("the curriculum is created with and the following information is displayed in the curriculum page")
     public void theCurriculumIsCreatedWithAndTheFollowingInformationIsDisplayedInTheCurriculumPage() {
         curriculumManager.clickCurriculum();
+        Assert.assertTrue(curriculumPage.getNameCurriculum().contains(context.getCurriculum().getName()));
     }
 }

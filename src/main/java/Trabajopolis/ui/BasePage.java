@@ -10,7 +10,7 @@
  * with Jala Foundation.
  */
 
-package project.ui;
+package Trabajopolis.ui;
 
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;

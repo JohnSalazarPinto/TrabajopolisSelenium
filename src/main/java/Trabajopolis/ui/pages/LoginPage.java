@@ -10,12 +10,12 @@
  * with Jala Foundation.
  */
 
-package project.ui.pages;
+package Trabajopolis.ui.pages;
 
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import project.ui.BasePage;
+import Trabajopolis.ui.BasePage;
 
 /**
  * LoginPage class.
@@ -54,7 +54,7 @@ public class LoginPage extends BasePage {
     /**
      * This method do click on login button.
      *
-     * @return hompage - Curriculum home page.
+     * @return hompage - CurriculumPage home page.
      */
     private HomePage clickLoginBtn() {
         TrabajopolisUtils.click(loginBtn);
@@ -66,7 +66,7 @@ public class LoginPage extends BasePage {
      *
      * @param userName - User username
      * @param password - User password
-     * @return hompage - Curriculum home page.
+     * @return hompage - CurriculumPage home page.
      */
     public HomePage loginSuccessfully(final String userName, final String password) {
         setUserName(userName);

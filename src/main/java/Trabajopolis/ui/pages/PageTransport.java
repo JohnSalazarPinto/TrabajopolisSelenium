@@ -10,8 +10,9 @@
  * with Jala Foundation.
  */
 
-package project.ui.pages;
+package Trabajopolis.ui.pages;
 
+import Trabajopolis.ui.BasePage;
 import core.selenium.TrabajopolisConfig;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -22,8 +23,7 @@ import org.openqa.selenium.WebDriver;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class PageTransport {
-
+public class PageTransport extends BasePage {
     private static WebDriver driver = WebDriverManager.getDriver();
     private static TrabajopolisConfig trabajopolisConfig;
 

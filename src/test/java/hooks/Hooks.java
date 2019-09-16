@@ -13,6 +13,7 @@
 package hooks;
 
 import core.selenium.WebDriverManager;
+import core.utils.TrabajopolisUtils;
 import cucumber.api.java.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -55,11 +56,16 @@ public class Hooks {
     /**
      * This method delete the last curriculum.
      */
-    @After("@DeleteCurriculum")
+    @After(value = "@DeleteCurriculum", order = 0)
     public void deleteCurriculum() {
         driver.get("https://www.trabajopolis.bo/my-listings/");
         driver.findElement(By.linkText("Eliminar")).click();
         assertThat(driver.switchTo().alert().getText(), is("Por favor confirme que desea eliminar el currículo seleccionado. \nEsta acción no se puede deshacer."));
         driver.switchTo().alert().accept();
+    }
+
+    @After(value = "Logout", order = 1)
+    public void logout() {
+        TrabajopolisUtils.click(By.xpath("//a[@href=\"https://www.trabajopolis.bo/logout/\"]"));
     }
 }

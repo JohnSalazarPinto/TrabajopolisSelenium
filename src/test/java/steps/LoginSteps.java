@@ -14,13 +14,15 @@ package steps;
 
 import core.selenium.TrabajopolisConfig;
 import core.selenium.WebDriverManager;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import project.ui.pages.HomePage;
-import project.ui.pages.LoginPage;
-import project.ui.pages.PageTransport;
+
+import Trabajopolis.ui.pages.HomePage;
+import Trabajopolis.ui.pages.LoginPage;
+import Trabajopolis.ui.pages.PageTransport;
 
 /**
  * LoginSteps class.

@@ -10,12 +10,12 @@
  * with Jala Foundation.
  */
 
-package project.ui.pages;
+package Trabajopolis.ui.pages;
 
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import project.ui.BasePage;
+import Trabajopolis.ui.BasePage;
 
 /**
  * FormPageThree class.

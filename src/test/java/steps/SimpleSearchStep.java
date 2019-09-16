@@ -12,13 +12,14 @@
 
 package steps;
 
+import Trabajopolis.entities.Context;
+import Trabajopolis.ui.pages.PageTransport;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
-import project.ui.pages.MainPage;
-import project.ui.pages.JobOffer;
-import project.ui.pages.PageTransport;
-import project.ui.pages.ResultSearch;
+import Trabajopolis.ui.pages.MainPage;
+import Trabajopolis.ui.pages.JobOffer;
+import Trabajopolis.ui.pages.ResultSearch;
 
 import java.util.Map;
 
@@ -32,15 +33,16 @@ public class SimpleSearchStep {
     private MainPage mainPage;
     private ResultSearch resultSearch;
     private JobOffer offer;
+    private Context context;
 
     /**
      * Constructor class init vulues.
      */
     public SimpleSearchStep() {
-        new PageTransport();
         this.mainPage = new MainPage();
         this.resultSearch = new ResultSearch();
         this.offer = new JobOffer();
+        this.context = new Context();
     }
 
     /**
@@ -48,6 +50,7 @@ public class SimpleSearchStep {
      */
     @When("the user unregistered navigates to principal search page")
     public void theUserUnregisteredNavigatesToPrincipalSearchPage() {
+        new PageTransport();
         PageTransport.visitMainPage();
     }
 
@@ -80,9 +83,18 @@ public class SimpleSearchStep {
      */
     @When("the user searches with the following characteristics")
     public void theUsErSearchesWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
-        mainPage.fillSimpleSearch(bodyFields.get("keyword"));
-        mainPage.setText(bodyFields.get("Category"), bodyFields.get("City"),
-                bodyFields.get("Type"), bodyFields.get("Posted withing"));
+        String keyword = bodyFields.get("Palabra de busqueda");
+        String category = bodyFields.get("Categoría");
+        String city = bodyFields.get("Ciudad");
+        String contract = bodyFields.get("Contrato");
+        String postedWithin = bodyFields.get("Publicado Dentro de");
+        context.getSearch().setCategory(category);
+        context.getSearch().setCity(city);
+        context.getSearch().setContract(contract);
+        context.getSearch().setPostedWithin(postedWithin);
+        context.getSearch().setKeyword(keyword);
+        mainPage.fillSimpleSearch(keyword);
+        mainPage.setText(category, city, contract, postedWithin);
         mainPage.clickSearch();
     }
 
@@ -92,6 +104,8 @@ public class SimpleSearchStep {
     @Then("the job with the following information is displayed in the results page")
     public void theJobWithTheFollowingInformationIsDisplayedInTheResultsPage() {
         resultSearch.clickFirstResult();
-        offer.publishedWithin();
+        Assert.assertTrue(offer.getMessageCategory().contains(context.getSearch().getCategory()) &&
+                offer.getMessageCity().contains(context.getSearch().getCity()) &&
+                offer.getMessageType().contains(context.getSearch().getContract()));
     }
 }

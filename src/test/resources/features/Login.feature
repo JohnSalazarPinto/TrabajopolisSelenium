@@ -1,5 +1,6 @@
 Feature: Login in an account
 
+  @Logout
   Scenario: login in Trabajopolis
     Given the user goes to login page
     When the user puts his username and password
