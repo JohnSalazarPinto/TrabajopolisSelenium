@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class FormPageThree extends BasePage {
-
     @FindBy(name = "EducacionColegio[Institucion][1]")
     private WebElement schoolForm;
 

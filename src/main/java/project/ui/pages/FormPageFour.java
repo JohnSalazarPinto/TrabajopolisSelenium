@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class FormPageFour extends BasePage {
-
     @FindBy(name = "Title")
     private WebElement titleForm;
 
@@ -45,7 +44,6 @@ public class FormPageFour extends BasePage {
 
     @FindBy(name = "privacidad")
     private WebElement privacityForm;
-
 
     @FindBy(id = "btn-add-cv")
     private WebElement nextFormButton;

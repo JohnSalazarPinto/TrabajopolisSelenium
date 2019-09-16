@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class MainPage extends BasePage {
-
     @FindBy(id = "keywords")
     private WebElement keyword;
 
@@ -82,5 +81,4 @@ public class MainPage extends BasePage {
         TrabajopolisUtils.selectComboBox(employmentTypeComboBox, type);
         TrabajopolisUtils.selectComboBox(postedWithinComboBox, time);
     }
-
 }

@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class FormPageOne extends BasePage {
-
     @FindBy(name = "nombre_0")
     private WebElement nameForm;
 

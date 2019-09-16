@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class FormPageTwo extends BasePage {
-
     @FindBy(name = "WorkExperience[JobTitle][1]")
     private WebElement jobTitleForm;
 

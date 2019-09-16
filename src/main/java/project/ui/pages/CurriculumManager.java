@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class CurriculumManager extends BasePage {
-
     @FindBy(xpath = "//*[@id=\"maindDivBg\"]/div[6]/p[4]/a[2]")
     private WebElement reviewCurriculumButton;
 

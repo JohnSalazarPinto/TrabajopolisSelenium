@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class ResultSearch extends BasePage {
-
     @FindBy(css = "tr[class='priorityListing']:nth-child(2) b")
     private WebElement cssElement;
 

@@ -39,7 +39,6 @@ public class TrabajopolisUtils {
      */
     public static void selectComboBox(final WebElement webElement, final String value) {
         new Select(webElement).selectByValue(value);
-
     }
 
     /**
@@ -84,7 +83,6 @@ public class TrabajopolisUtils {
             }
         }
     }
-
 
     /**
      * This method makes click action.

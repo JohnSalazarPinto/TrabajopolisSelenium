@@ -35,22 +35,15 @@ tasks.withType(Pmd) {
     }
 }
 
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '1.7.2'
-// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '4.7.2'
     testCompile 'io.cucumber:cucumber-java:4.7.1'
-// https://mvnrepository.com/artifact/org.testng/testng
     testCompile group: 'org.testng', name: 'testng', version: '7.0.0'
     compile group: 'net.masterthought', name: 'cucumber-reporting', version: '4.6.0'
     compile group: 'io.cucumber', name: 'cucumber-testng', version: '4.7.1'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
-    // https://mvnrepository.com/artifact/com.indvd00m.ascii.render/java-ascii-render
     compile group: 'com.indvd00m.ascii.render', name: 'java-ascii-render', version: '2.1.2', ext: 'pom'
-
 }

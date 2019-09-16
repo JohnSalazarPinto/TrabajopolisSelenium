@@ -24,7 +24,6 @@ import project.ui.BasePage;
  * @version 1.0
  */
 public class JobOffer extends BasePage {
-
     @FindBy(xpath = "//li[@class=\"rounded-sprite content\"]  //div[contains(strong,\"Categoría\")]")
     private WebElement category;
 
