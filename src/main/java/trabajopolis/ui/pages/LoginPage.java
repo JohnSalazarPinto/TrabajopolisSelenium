@@ -56,21 +56,20 @@ public class LoginPage extends BasePage {
      *
      * @return hompage - CurriculumPage home page.
      */
-    private HomePage clickLoginBtn() {
+    private void clickLoginBtn() {
         TrabajopolisUtils.click(loginBtn);
-        return new HomePage();
     }
 
-  /**
+    /**
      * Fills user name and password.
      *
      * @param userName - User username
      * @param password - User password
      * @return hompage - CurriculumPage home page.
      */
-    public HomePage loginSuccessfully(final String userName, final String password) {
+    public void loginSuccessfully(final String userName, final String password) {
         setUserName(userName);
         setPassword(password);
-        return clickLoginBtn();
+        clickLoginBtn();
     }
 }
