@@ -76,7 +76,6 @@ public class CurriculumSteps {
         context.getCurriculum().setLastName(lastName);
         context.getCurriculum().setDateBorn(born);
         formPageOne.fillCurriculumFormPageOne(name, lastName, cellPhone, idDocument, address);
-        System.out.println(born);
         formPageOne.fillOptions(civilStatus, document, born);
     }
 
