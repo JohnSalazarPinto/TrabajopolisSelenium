@@ -61,7 +61,7 @@ public class LoginPage extends BasePage {
         return new HomePage();
     }
 
-    /**
+  /**
      * Fills user name and password.
      *
      * @param userName - User username

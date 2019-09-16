@@ -1,7 +1,7 @@
 Feature: Creates Curriculums
 
   @DeleteCurriculum
-  Scenario: User create a curriculum with the minimum data required
+  Scenario: Create a curriculum with the minimum data required
     Given the user goes to login page
     And the user puts his username and password
     When the user navigates CV summary page
