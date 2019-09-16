@@ -10,7 +10,6 @@
  * with Jala Foundation.
  */
 
-
 package trabajopolis.entities;
 
 /**
