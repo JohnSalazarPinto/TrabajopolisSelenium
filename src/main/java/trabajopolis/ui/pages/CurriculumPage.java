@@ -10,9 +10,9 @@
  * with Jala Foundation.
  */
 
-package Trabajopolis.ui.pages;
+package trabajopolis.ui.pages;
 
-import Trabajopolis.ui.BasePage;
+import trabajopolis.ui.BasePage;
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

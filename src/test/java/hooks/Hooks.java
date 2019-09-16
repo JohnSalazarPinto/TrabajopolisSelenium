@@ -12,8 +12,8 @@
 
 package hooks;
 
-import Trabajopolis.ui.pages.CurriculumManager;
-import Trabajopolis.ui.pages.PageTransport;
+import trabajopolis.ui.pages.CurriculumManager;
+import trabajopolis.ui.pages.PageTransport;
 import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
 import cucumber.api.java.After;

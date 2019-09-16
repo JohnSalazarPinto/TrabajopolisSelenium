@@ -12,14 +12,14 @@
 
 package steps;
 
-import Trabajopolis.entities.Context;
-import Trabajopolis.ui.pages.PageTransport;
+import trabajopolis.entities.Context;
+import trabajopolis.ui.pages.PageTransport;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
-import Trabajopolis.ui.pages.MainPage;
-import Trabajopolis.ui.pages.JobOffer;
-import Trabajopolis.ui.pages.ResultSearch;
+import trabajopolis.ui.pages.MainPage;
+import trabajopolis.ui.pages.JobOffer;
+import trabajopolis.ui.pages.ResultSearch;
 
 import java.util.Map;
 

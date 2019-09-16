@@ -12,8 +12,8 @@
 
 package steps;
 
-import Trabajopolis.entities.Context;
-import Trabajopolis.ui.pages.*;
+import trabajopolis.entities.Context;
+import trabajopolis.ui.pages.*;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;

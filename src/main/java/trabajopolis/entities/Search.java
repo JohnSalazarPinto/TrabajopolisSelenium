@@ -10,7 +10,7 @@
  * with Jala Foundation.
  */
 
-package Trabajopolis.entities;
+package trabajopolis.entities;
 
 /**
  * Search class.
@@ -25,6 +25,11 @@ public class Search {
     private String contract;
     private String city;
 
+    /**
+     * This method gets user keyword.
+     *
+     * @return keyword - User keyword
+     */
     public String getKeyword() {
         return keyword;
     }
@@ -34,7 +39,7 @@ public class Search {
      *
      * @param keyword - Name to be set.
      */
-    public void setKeyword(String keyword) {
+    public void setKeyword(final String keyword) {
         this.keyword = keyword;
     }
 
@@ -52,7 +57,7 @@ public class Search {
      *
      * @param category - Name to be set.
      */
-    public void setCategory(String category) {
+    public void setCategory(final String category) {
         this.category = category;
     }
 
@@ -70,7 +75,7 @@ public class Search {
      *
      * @param city - Name to be set.
      */
-    public void setCity(String city) {
+    public void setCity(final String city) {
         this.city = city;
     }
 
@@ -124,7 +129,7 @@ public class Search {
      *
      * @param postedWithin - Time to be set.
      */
-    public void setPostedWithin(String postedWithin) {
+    public void setPostedWithin(final String postedWithin) {
         this.postedWithin = postedWithin;
     }
 }

@@ -10,9 +10,9 @@
  * with Jala Foundation.
  */
 
-package Trabajopolis.ui.pages;
+package trabajopolis.ui.pages;
 
-import Trabajopolis.ui.BasePage;
+import trabajopolis.ui.BasePage;
 import core.selenium.TrabajopolisConfig;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;

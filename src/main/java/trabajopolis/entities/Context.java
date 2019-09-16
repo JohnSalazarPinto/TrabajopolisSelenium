@@ -10,7 +10,7 @@
  * with Jala Foundation.
  */
 
-package Trabajopolis.entities;
+package trabajopolis.entities;
 
 /**
  * Context class.

@@ -1,5 +1,5 @@
 /*
- * @(#) HomePage.java Copyright (c) 2019 Jala Foundation.
+ * @(#) TrabajopolisUtils.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -10,14 +10,13 @@
  * with Jala Foundation.
  */
 
-package Trabajopolis.ui.pages;
+package trabajopolis.api;
 
 /**
- * HomePage class.
+ * Api class.
  *
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class HomePage {
-
+public class Api {
 }

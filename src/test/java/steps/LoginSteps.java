@@ -20,9 +20,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 
-import Trabajopolis.ui.pages.HomePage;
-import Trabajopolis.ui.pages.LoginPage;
-import Trabajopolis.ui.pages.PageTransport;
+import trabajopolis.ui.pages.HomePage;
+import trabajopolis.ui.pages.LoginPage;
+import trabajopolis.ui.pages.PageTransport;
 
 /**
  * LoginSteps class.
