@@ -70,9 +70,10 @@ public class SimpleSearchStep {
      *
      * @param keyWord -User keyword of the search.
      */
-    @Then("the job {string} is displayed in the results page")
+    @Then("the job with the category {string} is displayed in the results page")
     public void theJobIsDisplayedInTheResultsPage(final String keyWord) {
         resultSearch.clickFirstResult();
+        System.out.println(offer.getMessageCategory());
         Assert.assertTrue(offer.getMessageCategory().contains(keyWord));
     }
 

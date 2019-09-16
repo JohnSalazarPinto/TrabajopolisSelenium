@@ -1,10 +1,12 @@
 Feature: Simple search
 
+  @Bug @Search
   Scenario: Search for a job by a keyword
     When the user unregistered navigates to principal search page
     And the user searches for a job by "Cheft de cocina" keyword
-    Then the job "Cocina" is displayed in the results page
+    Then the job with the category "Cocina" is displayed in the results page
 
+  @Acceptance @Search
   Scenario: Search for a job by a keyword, category, city, posted within number days and type of contract
     When the user unregistered navigates to principal search page
     And the user searches with the following characteristics

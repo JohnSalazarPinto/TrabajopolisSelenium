@@ -1,11 +1,11 @@
 Feature: Creates Curriculums
 
-  @DeleteCurriculum @Logout
+  @DeleteCurriculum @Logout @Acceptance @Curriculum
   Scenario: Create a curriculum with the minimum data required
     Given the user goes to login page
     And the user puts his username and password
-    When the user navigates CV summary page
-    And the user fill the data in the first form page with the following characteristics
+    When the user navigates to CV summary page
+    And the user fill the datas in the first form page with the following characteristics
       | Nombre              | Pedro         |
       | Apellido            | Perez Pereira |
       | Celular             | 47436272      |
@@ -14,14 +14,14 @@ Feature: Creates Curriculums
       | Fecha de nacimiento | 25-12-1980    |
       | Direccion           | Av Bolivia    |
       | Estado civil        | Soltero(a)    |
-    And the user fill the data in the second form page with the following characteristics
+    And the user fill the datas in the second form page with the following characteristics
       | Cargo en la empresa  | Ingeniero  |
       | Nombre de la empresa | Test S.A.  |
       | País                 | Bolivia    |
       | Ciudad               | cochabamba |
       | Fecha de Inicio      | 1-10-1999  |
       | Fecha de Fin         | 31-10-2003 |
-    And the user fill the data in the third form page with the following characteristics
+    And the user fill the datas in the third form page with the following characteristics
       | Colegio o Institución          | Estenssoro               |
       | Nivel de Estudio               | Bachiller en Humanidades |
       | País                           | Bolivia                  |
@@ -39,7 +39,7 @@ Feature: Creates Curriculums
       | Nivel Escrito                  | Avanzado                 |
       | Nivel Oral                     | Avanzado                 |
       | Nivel Lectura                  | Avanzado                 |
-    And the user fill the data in the four form page with the following characteristics
+    And the user fill the datas in the four form page with the following characteristics
       | Título                    | Ingeniero de Software                    |
       | Categoría                 | Ingeniería                               |
       | Contrato                  | full time                                |

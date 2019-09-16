@@ -51,8 +51,8 @@ public class CurriculumSteps {
     /**
      * User navigates CV summary page
      */
-    @When("the user navigates CV summary page")
-    public void theUserNavigatesCurriculumPage() {
+    @When("the user navigates to CV summary page")
+    public void theUserNavigatesToCurriculumPage() {
         formPageOne.visitCurriculumPage();
     }
 
@@ -61,8 +61,8 @@ public class CurriculumSteps {
      *
      * @param bodyFields - User Data
      */
-    @When("the user fill the data in the first form page with the following characteristics")
-    public void theUserFillTheDataInTheFirstFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
+    @When("the user fill the datas in the first form page with the following characteristics")
+    public void theUserFillTheDatasInTheFirstFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
         String name = bodyFields.get("Nombre");
         String lastName = bodyFields.get("Apellido");
         String cellPhone = bodyFields.get("Celular");
@@ -85,8 +85,8 @@ public class CurriculumSteps {
      *
      * @param bodyFields - User Data
      */
-    @When("the user fill the data in the second form page with the following characteristics")
-    public void theUserFillTheDataInTheSecondFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
+    @When("the user fill the datas in the second form page with the following characteristics")
+    public void theUserFillTheDatasInTheSecondFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
         String jobTitle = bodyFields.get("Cargo en la empresa");
         String companyNAme = bodyFields.get("Nombre de la empresa");
         String country = bodyFields.get("País");
@@ -103,8 +103,8 @@ public class CurriculumSteps {
      *
      * @param bodyFields - User Data
      */
-    @When("the user fill the data in the third form page with the following characteristics")
-    public void theUserFillTheDataInTheThirdFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
+    @When("the user fill the datas in the third form page with the following characteristics")
+    public void theUserFillTheDatasInTheThirdFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
         String school = bodyFields.get("Colegio o Institución");
         String schoolLevel = bodyFields.get("Nivel de Estudio");
         String country = bodyFields.get("País");
@@ -133,8 +133,8 @@ public class CurriculumSteps {
      *
      * @param bodyFields - User Data
      */
-    @When("the user fill the data in the four form page with the following characteristics")
-    public void theUserFillTheDataInTheFourFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
+    @When("the user fill the datas in the four form page with the following characteristics")
+    public void theUserFillTheDatasInTheFourFormPageWithTheFollowingCharacteristics(final Map<String, String> bodyFields) {
         String title = bodyFields.get("Título");
         String category = bodyFields.get("Categoría");
         String contract = bodyFields.get("Contrato");
@@ -154,6 +154,9 @@ public class CurriculumSteps {
     @Then("the curriculum is created with and the following information is displayed in the curriculum page")
     public void theCurriculumIsCreatedWithAndTheFollowingInformationIsDisplayedInTheCurriculumPage() {
         curriculumManager.clickCurriculum();
-        Assert.assertTrue(curriculumPage.getNameCurriculum().contains(context.getCurriculum().getName()));
+        Assert.assertTrue(curriculumPage.getNameCurriculum().contains(context.getCurriculum().getName()) &&
+                curriculumPage.getLastNameCurriculum().contains(context.getCurriculum().getLastName()) &&
+                curriculumPage.getSalaryCurriculum().contains(context.getCurriculum().getSalary()) &&
+                curriculumPage.getTitleCurriculum().contains(context.getCurriculum().getTitle()));
     }
 }

@@ -12,6 +12,7 @@
 
 package Trabajopolis.ui.pages;
 
+import Trabajopolis.ui.BasePage;
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,7 +23,7 @@ import org.openqa.selenium.support.FindBy;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class CurriculumPage {
+public class CurriculumPage extends BasePage {
     @FindBy(xpath = "//li[@class=\"rounded-sprite content\"] //div[contains(strong,\"Nombre\")]")
     private WebElement nameCurriculum;
 
@@ -44,7 +45,6 @@ public class CurriculumPage {
      * @return name
      */
     public String getNameCurriculum() {
-        System.out.println(TrabajopolisUtils.getMessage(nameCurriculum)+" ######the message");
         return TrabajopolisUtils.getMessage(nameCurriculum);
     }
 

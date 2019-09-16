@@ -65,6 +65,6 @@ public class LoginSteps {
      */
     @Then("user login successfully")
     public void userLoginSuccessfully() {
-        Assert.assertTrue(WebDriverManager.getDriver().getTitle().contains("Curriculum | Trabajopolis.bo"));
+        Assert.assertTrue(WebDriverManager.getDriver().getTitle().contains("Mi Cuenta | Trabajopolis.bo"));
     }
 }

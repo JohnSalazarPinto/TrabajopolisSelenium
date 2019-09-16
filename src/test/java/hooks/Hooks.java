@@ -12,6 +12,8 @@
 
 package hooks;
 
+import Trabajopolis.ui.pages.CurriculumManager;
+import Trabajopolis.ui.pages.PageTransport;
 import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
 import cucumber.api.java.After;
@@ -21,9 +23,6 @@ import org.openqa.selenium.TakesScreenshot;
 import cucumber.api.Scenario;
 import org.openqa.selenium.WebDriver;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
 /**
  * Hooks class.
  *
@@ -32,12 +31,14 @@ import static org.junit.Assert.assertThat;
  */
 public class Hooks {
     private WebDriver driver;
+    private CurriculumManager curriculumManager;
 
     /**
      * Init driver.
      */
     public Hooks() {
         this.driver = WebDriverManager.getInstance().getDriver();
+        this.curriculumManager = new CurriculumManager();
     }
 
     /**
@@ -56,16 +57,19 @@ public class Hooks {
     /**
      * This method delete the last curriculum.
      */
-    @After(value = "@DeleteCurriculum", order = 0)
+    @After(value = "@DeleteCurriculum", order = 1)
     public void deleteCurriculum() {
-        driver.get("https://www.trabajopolis.bo/my-listings/");
-        driver.findElement(By.linkText("Eliminar")).click();
-        assertThat(driver.switchTo().alert().getText(), is("Por favor confirme que desea eliminar el currículo seleccionado. \nEsta acción no se puede deshacer."));
-        driver.switchTo().alert().accept();
+        PageTransport.visitCurriculumPage();
+        curriculumManager.deleteLastCurriculum();
+        curriculumManager.acceptDeleteCurriculumAlert();
     }
 
-    @After(value = "Logout", order = 1)
+    /**
+     * This method logout the user account.
+     */
+    @After(value = "@Logout", order = 0)
     public void logout() {
+        PageTransport.visitCurriculumPage();
         TrabajopolisUtils.click(By.xpath("//a[@href=\"https://www.trabajopolis.bo/logout/\"]"));
     }
 }

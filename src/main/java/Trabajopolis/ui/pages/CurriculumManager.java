@@ -12,6 +12,7 @@
 
 package Trabajopolis.ui.pages;
 
+import core.selenium.WebDriverManager;
 import core.utils.TrabajopolisUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,10 +28,27 @@ public class CurriculumManager extends BasePage {
     @FindBy(xpath = "//*[@id=\"maindDivBg\"]/div[6]/p[4]/a[2]")
     private WebElement reviewCurriculumButton;
 
+    @FindBy(linkText = "Eliminar")
+    private WebElement deleteCurriculum;
+
     /**
      * This method do click on the button for review the curriculum tha was created.
      */
     public void clickCurriculum() {
         TrabajopolisUtils.click(reviewCurriculumButton);
+    }
+
+    /**
+     * This method do click for delete the las curriculum created.
+     */
+    public void deleteLastCurriculum() {
+        TrabajopolisUtils.click(deleteCurriculum);
+    }
+
+    /**
+     * This method confirms that the user wants to delete the curriculum.
+     */
+    public void acceptDeleteCurriculumAlert() {
+        WebDriverManager.getDriver().switchTo().alert().accept();
     }
 }
