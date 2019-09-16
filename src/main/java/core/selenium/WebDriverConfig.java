@@ -70,8 +70,8 @@ public final class WebDriverConfig {
             waitImplicitFirefox = properties.getProperty("waitImplicitFirefox");
             waitExplicitFirefox = properties.getProperty("waitExplicitFirefox");
         } catch (IOException e) {
-            Log.getInstance().getLog().error(e + "File not found.");
-            throw new RuntimeException("File not found." + e);
+            Log.getInstance().getLog().error(e + " File not found.");
+            throw new RuntimeException(" File not found." + e);
         }
         return properties;
     }
