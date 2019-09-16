@@ -23,7 +23,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class Firefox implements IBrowser{
+public class Firefox implements IBrowser {
     private static WebDriver driver;
 
     /**

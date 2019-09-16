@@ -10,8 +10,9 @@
  * with Jala Foundation.
  */
 
-package project.ui.pages;
+package trabajopolis.ui.pages;
 
+import trabajopolis.ui.BasePage;
 import core.selenium.TrabajopolisConfig;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -22,35 +23,42 @@ import org.openqa.selenium.WebDriver;
  * @author John Salazar Pinto
  * @version 1.0
  */
-public class PageTransport {
-    private static WebDriver driver;
-    private static TrabajopolisConfig amazonConfig;
-
-    /**
-     * Init driver.
-     */
-    public PageTransport() {
-        this.driver = WebDriverManager.getDriver();
-    }
+public class PageTransport extends BasePage {
+    private static WebDriver driver = WebDriverManager.getDriver();
+    private static TrabajopolisConfig trabajopolisConfig;
 
     /**
      * This method visit the page.
      */
     public static void visitLogin() {
-        driver.get(amazonConfig.getInstance().getUrlLogin());
+        driver.get(trabajopolisConfig.getInstance().getUrlLogin());
     }
 
     /**
      * This method visit the profile page.
      */
     public static void visitProfile() {
-        driver.get(amazonConfig.getInstance().getUrlProfile());
+        driver.get(trabajopolisConfig.getInstance().getUrlProfile());
     }
 
     /**
      * This method visit the profile page.
      */
     public static void visitMainPage() {
-        driver.get(amazonConfig.getInstance().getUrlBase());
+        driver.get(trabajopolisConfig.getInstance().getUrlBase());
+    }
+
+    /**
+     * This method visit the profile page.
+     */
+    public static void visitCurriculumPage() {
+        driver.get(trabajopolisConfig.getInstance().getUrlCurriculum());
+    }
+
+    /**
+     * This method visit the form for fill curriculum.
+     */
+    public static void visitFillCurriculumPage() {
+        driver.get(trabajopolisConfig.getInstance().getUrlFillCurriculum());
     }
 }

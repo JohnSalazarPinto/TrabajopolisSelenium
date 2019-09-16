@@ -3,7 +3,7 @@ package core.selenium.webdriver;
 import org.openqa.selenium.WebDriver;
 
 /**
- * IBrowser class
+ * IBrowser class.
  *
  * @author John Salazar Pinto
  * @version 1.0
@@ -15,5 +15,5 @@ public interface IBrowser {
      *
      * @return a WebDriver object.
      */
-    public WebDriver init();
+    WebDriver init();
 }

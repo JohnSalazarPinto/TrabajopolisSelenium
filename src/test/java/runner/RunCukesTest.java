@@ -30,7 +30,7 @@ import org.testng.annotations.AfterTest;
                 "json:target/cucumber.json",
                 "rerun:target/rerun.txt"},
         glue = {"steps", "hooks"},
-        features = {"src/test/resources/features/"},
+        features = {"src/test/resources/features"},
         monochrome = true)
 public class RunCukesTest extends AbstractTestNGCucumberTests {
     private TrabajopolisUtils trabajopolisUtils;

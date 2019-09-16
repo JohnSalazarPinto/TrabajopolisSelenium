@@ -12,7 +12,10 @@
 
 package core.selenium;
 
+import core.utils.Log;
+
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -66,8 +69,9 @@ public final class WebDriverConfig {
             waitExplicitChrome = properties.getProperty("waitExplicitChrome");
             waitImplicitFirefox = properties.getProperty("waitImplicitFirefox");
             waitExplicitFirefox = properties.getProperty("waitExplicitFirefox");
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            Log.getInstance().getLog().error(e + " File not found.");
+            throw new RuntimeException(" File not found." + e);
         }
         return properties;
     }
