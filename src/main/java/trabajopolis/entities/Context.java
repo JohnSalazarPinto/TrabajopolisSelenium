@@ -33,7 +33,7 @@ public class Context {
     /**
      * Allows to get context's search.
      *
-     * @return - search .
+     * @return - search.
      */
     public Search getSearch() {
         return search;
