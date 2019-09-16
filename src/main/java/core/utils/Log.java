@@ -7,8 +7,8 @@ import org.apache.log4j.PropertyConfigurator;
 /**
  * This class is used to generate logs.
  *
- * @author Maday Alcala Cuba.
- * @version 0.0.1
+ * @author John Salazar Pinto
+ * @version 1.0
  */
 public final class Log {
     private static final String LOG4J_PROPERTIES = "log4j.properties";
