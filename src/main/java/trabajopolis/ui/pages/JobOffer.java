@@ -13,6 +13,7 @@
 package trabajopolis.ui.pages;
 
 import core.utils.TrabajopolisUtils;
+import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import trabajopolis.ui.BasePage;
@@ -93,7 +94,7 @@ public class JobOffer extends BasePage {
             Date fechaFinal = dateFormat.parse(dateFormat.format(cal.getTime()));
             days = (int) ((fechaFinal.getTime() - fechaInicial.getTime()) / 86400000);
         } catch (ParseException e) {
-            e.printStackTrace();
+            new InvalidArgumentException(" The date isn't a valid argument");
         }
         return days;
     }
