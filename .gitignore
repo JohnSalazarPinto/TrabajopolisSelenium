@@ -1,0 +1,7 @@
+.idea/
+.gradle/
+build/
+out/
+target/
+src/test/resources/logs/
+
