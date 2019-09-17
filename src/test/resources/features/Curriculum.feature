@@ -47,4 +47,6 @@ Feature: Creates Curriculums
       | País de residencia        | Bolivia                                  |
       | Ciudad actual             | Cochabamba                               |
       | Privacidad del Currículum | Solamente las empresas a las que Postulo |
-    Then the curriculum is created with and the following information is displayed in the curriculum page
+    Then the curriculum is created with and the following basic information is displayed in the curriculum page
+    And the curriculum with the following user language information is displayed in the results page
+    And the curriculum with the following user work experience information is displayed in the results page

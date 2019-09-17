@@ -16,3 +16,4 @@ Feature: Simple search
       | Contrato            | Full time   |
       | Publicado Dentro de | 30          |
     Then the job with the following information is displayed in the results page
+
