@@ -1,5 +1,5 @@
 /*
- * @(#) CurriculumPage.java Copyright (c) 2019 Jala Foundation.
+ * @(#) Curriculum.java Copyright (c) 2019 Jala Foundation.
  * 2643 Av. Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
 package trabajopolis.entities;
 
 /**
- * CurriculumPage class.
+ * Curriculum class.
  *
  * @author John Salazar Pinto
  * @version 1.0
@@ -23,7 +23,7 @@ public class Curriculum {
     private String title;
     private String salary;
     private String lastName;
-    private String dateBorn;
+    private String bornDate;
 
     /**
      * This method get job title that user fill.
@@ -35,7 +35,7 @@ public class Curriculum {
     }
 
     /**
-     * This method set user title.
+     * This method set user job title.
      *
      * @param title - Job title
      */
@@ -44,9 +44,9 @@ public class Curriculum {
     }
 
     /**
-     * This method get title that user fill.
+     * This method get salary that user fill.
      *
-     * @return title
+     * @return salary - User salary
      */
     public String getSalary() {
         return salary;
@@ -64,25 +64,25 @@ public class Curriculum {
     /**
      * This method get title that user fill.
      *
-     * @return title
+     * @return bornDate - User born date.
      */
-    public String getDateBorn() {
-        return dateBorn;
+    public String getBornDate() {
+        return bornDate;
     }
 
     /**
      * This method set user title.
      *
-     * @param dateBorn - Date born
+     * @param bornDate - Born date.
      */
-    public void setDateBorn(final String dateBorn) {
-        this.dateBorn = dateBorn;
+    public void setBornDate(final String bornDate) {
+        this.bornDate = bornDate;
     }
 
     /**
      * This method get title that user fill.
      *
-     * @return title
+     * @return lastName - User last name
      */
     public String getLastName() {
         return lastName;
@@ -91,7 +91,7 @@ public class Curriculum {
     /**
      * This method set user title.
      *
-     * @param lastName - Last name
+     * @param lastName - User last name
      */
     public void setLastName(final String lastName) {
         this.lastName = lastName;
@@ -100,7 +100,7 @@ public class Curriculum {
     /**
      * This method get title that user fill.
      *
-     * @return title
+     * @return name - User name
      */
     public String getName() {
         return name;

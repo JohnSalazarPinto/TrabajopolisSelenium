@@ -1,6 +1,6 @@
 Feature: Creates Curriculums
 
-  @DeleteCurriculum @Logout @Acceptance @Curriculum
+  //@DeleteCurriculum @Logout @Acceptance @Curriculum
   Scenario: Create a curriculum with the minimum data required
     Given the user goes to login page
     And the user puts his username and password

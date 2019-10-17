@@ -13,10 +13,15 @@
 package steps;
 
 import trabajopolis.entities.Context;
-import trabajopolis.ui.pages.*;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import trabajopolis.ui.pages.FormPageOne;
+import trabajopolis.ui.pages.FormPageTwo;
+import trabajopolis.ui.pages.FormPageFour;
+import trabajopolis.ui.pages.FormPageThree;
+import trabajopolis.ui.pages.CurriculumManager;
+import trabajopolis.ui.pages.CurriculumPage;
 
 import java.util.Map;
 
@@ -74,7 +79,7 @@ public class CurriculumSteps {
         String civilStatus = bodyFields.get("Estado civil");
         context.getCurriculum().setName(name);
         context.getCurriculum().setLastName(lastName);
-        context.getCurriculum().setDateBorn(born);
+        context.getCurriculum().setBornDate(born);
         formPageOne.fillCurriculumFormPageOne(name, lastName, cellPhone, idDocument, address);
         formPageOne.fillOptions(civilStatus, document, born);
     }
@@ -122,8 +127,8 @@ public class CurriculumSteps {
         String speakingLevel = bodyFields.get("Nivel Oral");
         String readingLevel = bodyFields.get("Nivel Lectura");
         formPageThree.fillForm(school, city, university, career, universityCity);
-        formPageThree.selectComboBox(schoolLevel, country, universityLevel, countryUniversity, language,
-                writingLevel, speakingLevel, readingLevel);
+        formPageThree.selectComboBox(schoolLevel, country, universityLevel, countryUniversity);
+        formPageThree.selectLanguage(language, writingLevel, speakingLevel, readingLevel);
         formPageThree.selectDate(initSchool, endSchool, initUniversity, endUniversity);
     }
 

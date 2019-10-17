@@ -17,6 +17,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import trabajopolis.ui.BasePage;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * JobOffer class.
  *
@@ -33,8 +38,8 @@ public class JobOffer extends BasePage {
     @FindBy(xpath = "//li[@class=\"rounded-sprite content\"]  //div[contains(strong,\"Ubicación\")]")
     private WebElement city;
 
-    @FindBy(xpath = "//li[@class=\"rounded-sprite content\"]  //div[contains(strong,\"Publicado\")]")
-    private WebElement time;
+    @FindBy(xpath = "//li[@class=\"rounded-sprite content\"]  //div[contains(strong,\"Publicado:\")]")
+    private WebElement date;
 
     /**
      * This method get category message.
@@ -66,17 +71,30 @@ public class JobOffer extends BasePage {
     /**
      * This method get time message.
      *
-     * @return time message
+     * @return date - Literal date.
      */
     public String getMessageTime() {
-        return TrabajopolisUtils.getMessage(time);
+        return TrabajopolisUtils.getMessage(date);
     }
 
     /**
-     * This method get time when was published.
+     * This method returns as long as the announcement was published in days.
+     *
+     * @return days - Number the as long as the announcement was published in days.
      */
-    public void publishedWithin() {
-        String time = getMessageTime();
-        String[] date = time.split(" ");
+    public int daysThatWasPublished() {
+        int days = 0;
+        String time = getMessageTime().substring(11);
+        String numeralDate = TrabajopolisUtils.trasnformDateToNumeral(time);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date fechaInicial = dateFormat.parse(numeralDate);
+            Calendar cal = Calendar.getInstance();
+            Date fechaFinal = dateFormat.parse(dateFormat.format(cal.getTime()));
+            days = (int) ((fechaFinal.getTime() - fechaInicial.getTime()) / 86400000);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return days;
     }
 }

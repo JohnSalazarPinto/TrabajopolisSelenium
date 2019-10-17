@@ -125,6 +125,17 @@ public class Search {
     }
 
     /**
+     * Returns number the days that the ad was published for assert the result page.
+     *
+     * @return daysThatWasPublished - Number the days that the ad was published.
+     */
+    public int daysThatWasPublished() {
+        int daysThatWasPublished = Integer.parseInt(getPostedWithin());
+        return daysThatWasPublished;
+    }
+
+
+    /**
      * Allows to set the time of was posted.
      *
      * @param postedWithin - Time to be set.

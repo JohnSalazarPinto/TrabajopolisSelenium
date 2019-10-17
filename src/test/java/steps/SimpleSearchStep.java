@@ -106,6 +106,7 @@ public class SimpleSearchStep {
         resultSearch.clickFirstResult();
         Assert.assertTrue(offer.getMessageCategory().contains(context.getSearch().getCategory()) &&
                 offer.getMessageCity().contains(context.getSearch().getCity()) &&
-                offer.getMessageType().contains(context.getSearch().getContract()));
+                offer.getMessageType().contains(context.getSearch().getContract()) &&
+                ((offer.daysThatWasPublished()) <= (context.getSearch().daysThatWasPublished())));
     }
 }

@@ -109,19 +109,26 @@ public class FormPageThree extends BasePage {
      * @param country           - User school country.
      * @param universityLevel   - User university level.
      * @param universityCountry - User university country.
+     */
+    public void selectComboBox(final String schoolLevel, final String country,
+                               final String universityLevel, final String universityCountry) {
+        TrabajopolisUtils.selectComboBox(schoolLevelForm, schoolLevel);
+        TrabajopolisUtils.selectComboBox(countrySchoolForm, country);
+        TrabajopolisUtils.selectComboBox(universityLevelForm, universityLevel);
+        TrabajopolisUtils.selectComboBox(countryUniversityForm, universityCountry);
+
+    }
+
+    /**
+     * Fills language options.
+     *
      * @param language          - User language.
      * @param writingLevel      - User writing level.
      * @param speakLevel        - User speak level.
      * @param readingLevel      - User reading level.
      */
-    public void selectComboBox(final String schoolLevel, final String country,
-                               final String universityLevel, final String universityCountry,
-                               final String language, final String writingLevel,
+    public void selectLanguage(final String language, final String writingLevel,
                                final String speakLevel, final String readingLevel) {
-        TrabajopolisUtils.selectComboBox(schoolLevelForm, schoolLevel);
-        TrabajopolisUtils.selectComboBox(countrySchoolForm, country);
-        TrabajopolisUtils.selectComboBox(universityLevelForm, universityLevel);
-        TrabajopolisUtils.selectComboBox(countryUniversityForm, universityCountry);
         TrabajopolisUtils.selectComboBox(languageForm, language);
         TrabajopolisUtils.selectComboBox(writeLevelForm, writingLevel);
         TrabajopolisUtils.selectComboBox(speakLevelForm, speakLevel);
