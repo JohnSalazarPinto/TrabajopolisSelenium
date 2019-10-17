@@ -21,6 +21,8 @@ package trabajopolis.entities;
 public class Context {
     private Search search;
     private Curriculum curriculum;
+    private WorkExperience workExperience;
+    private Language language;
 
     /**
      * Constructs all elements in the context.
@@ -28,6 +30,8 @@ public class Context {
     public Context() {
         this.search = new Search();
         this.curriculum = new Curriculum();
+        this.workExperience = new WorkExperience();
+        this.language = new Language();
     }
 
     /**
@@ -46,5 +50,23 @@ public class Context {
      */
     public Curriculum getCurriculum() {
         return curriculum;
+    }
+
+    /**
+     * Allows to get context's work expirience.
+     *
+     * @return - workExperience.
+     */
+    public WorkExperience getWorkExperience() {
+        return workExperience;
+    }
+
+    /**
+     * Allows to get context's user language.
+     *
+     * @return - language.
+     */
+    public Language getLanguage() {
+        return language;
     }
 }

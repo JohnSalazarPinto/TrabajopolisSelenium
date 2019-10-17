@@ -36,8 +36,14 @@ public class CurriculumPage extends BasePage {
     @FindBy(xpath = "//li[@class=\"rounded-sprite content\"] //div[contains(strong,\"Pretensión Salarial\")]")
     private WebElement salaryCurriculum;
 
+    @FindBy(xpath = "//div[@class=\"resume-block\"] //span[contains(.,\"Nivel\")]")
+    private WebElement languageCurriculum;
+
     @FindBy(xpath = "//*[@id=\"rounded-lh-cap\"]/ul/li[3]/div/h1/strong")
     private WebElement titleCurriculum;
+
+    @FindBy(xpath = " //*[@id=\"rounded-lh-cap\"]/ul/li[3]/div/div[3]/ul/li")
+    private WebElement workExpirence;
 
     /**
      * This method get name.
@@ -67,6 +73,26 @@ public class CurriculumPage extends BasePage {
     }
 
     /**
+     * This method get date born how user put in the feature.
+     *
+     * @return dateborn - Number date born like dd-MM-yyyy.
+     */
+    public String getDateBornToCurriculumFormat() {
+        String dateBornFeatureFormat = getDateBornCurriculum().replace(".", "-");
+        return dateBornFeatureFormat;
+    }
+
+    /**
+     * Returns all data of the language that user fill in the form.
+     *
+     * @return languageData
+     */
+    public String getAllDataLanguage() {
+        TrabajopolisUtils.getMessage(languageCurriculum);
+        return TrabajopolisUtils.getMessage(languageCurriculum);
+    }
+
+    /**
      * This method get name.
      *
      * @return name
@@ -82,5 +108,14 @@ public class CurriculumPage extends BasePage {
      */
     public String getTitleCurriculum() {
         return TrabajopolisUtils.getMessage(titleCurriculum);
+    }
+
+    /**
+     * This method get user work experience.
+     *
+     * @return name
+     */
+    public String getWorkExperienceCurriculum() {
+        return TrabajopolisUtils.getMessage(workExpirence);
     }
 }

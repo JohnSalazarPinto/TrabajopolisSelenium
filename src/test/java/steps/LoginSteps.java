@@ -61,8 +61,8 @@ public class LoginSteps {
     /**
      * User confirm his login by title of the new page.
      */
-    @Then("user login successfully")
-    public void userLoginSuccessfully() {
+    @Then("the user is redirected to his account page")
+    public void theUserIsRedirectedToHisAccountPage() {
         Assert.assertTrue(WebDriverManager.getDriver().getTitle().contains("Mi Cuenta | Trabajopolis.bo"));
     }
 }
